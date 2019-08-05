@@ -23,6 +23,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.scorpion.unithalluwa.Main.MainUI;
 import com.scorpion.unithalluwa.R;
 import com.scorpion.unithalluwa.User.Main;
 import com.scorpion.unithalluwa.User.Register;
@@ -78,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 setResult(Activity.RESULT_OK);
 
-                Intent i = new Intent(getApplicationContext(),Main.class);
+                Intent i = new Intent(getApplicationContext(), MainUI.class);
                 startActivity(i);
 
                 //setContentView(R.layout.activity_profile);
