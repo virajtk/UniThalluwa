@@ -89,7 +89,7 @@
         app:layout_constraintVertical_bias="0.3" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/registerBtn"
         android:layout_width="133dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
