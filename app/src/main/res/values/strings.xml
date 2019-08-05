@@ -18,13 +18,13 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
-    <string name="menu_share">Share</string>
-    <string name="menu_send">Send</string>
-    <string name="registation">Registaion</string>
-    <string name="registaionNumber">Registation Number</string>
+    <string name="menu_Mark">Marks</string>
+    <string name="menu_markingSchema">Marking Schema</string>
+    <string name="menu_assignment">Assignments</string>
+    <string name="menu_aboutgpa">GPA</string>
+    <string name="menu_req">Requirements</string>
+    <string name="registation">Registration</string>
+    <string name="registaionNumber">Registration Number</string>
     <string name="ConfirmPassword">Confirm Password</string>
     <string name="email">E-mail</string>
     <string name="role">Role</string>
@@ -39,4 +39,5 @@
     <string name="gpa">GPA</string>
     <string name="update">Update</string>
     <string name="title_activity_main_ui">Home</string>
+    <string name="signout">Sign out</string>
 </resources>

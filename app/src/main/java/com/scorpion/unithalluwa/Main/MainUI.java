@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import android.view.View;
 
@@ -16,6 +15,7 @@ import android.view.MenuItem;
 import com.google.android.material.navigation.NavigationView;
 import com.scorpion.unithalluwa.R;
 import com.scorpion.unithalluwa.User.profile;
+import com.scorpion.unithalluwa.ui.login.LoginActivity;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -77,8 +77,9 @@ public class MainUI extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.action_logout) {
+            Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+            startActivity(i);
         }
 
         return super.onOptionsItemSelected(item);
@@ -90,18 +91,24 @@ public class MainUI extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_tools) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        if (id == R.id.nav_profile) {
+            Intent i = new Intent(getApplicationContext(),profile.class);
+            startActivity(i);
+        } else if (id == R.id.nav_mark) {
+            //Intent i = new Intent(getApplicationContext(),#.class);
+            //startActivity(i);
+        } else if (id == R.id.nav_markingSchema) {
+            //Intent i = new Intent(getApplicationContext(),#.class);
+            //startActivity(i);
+        } else if (id == R.id.nav_assignment) {
+            //Intent i = new Intent(getApplicationContext(),#.class);
+            //startActivity(i);
+        } else if (id == R.id.nav_GPA) {
+            //Intent i = new Intent(getApplicationContext(),#.class);
+            //startActivity(i);
+        } else if (id == R.id.nav_req) {
+            //Intent i = new Intent(getApplicationContext(),#.class);
+            //startActivity(i);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
