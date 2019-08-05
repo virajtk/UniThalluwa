@@ -69,8 +69,10 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 setResult(Activity.RESULT_OK);
 
+                setContentView(R.layout.activity_report);
+
                 //Complete and destroy login activity once successful
-                finish();
+                //finish();//
             }
         });
 

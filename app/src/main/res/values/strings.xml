@@ -9,4 +9,14 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="studentNumber">Student Number</string>
+    <string name="registaionNumber">Registaion Number</string>
+    <string name="gpa">GPA</string>
+    <string name="studentNo">Student Number</string>
+    <string name="marks">Mark</string>
+    <string name="submit">Submit</string>
+    <string name="IT19xxxxxx">IT19xxxxxx</string>
+    <string name="ca">CA Marks</string>
+    <string name="ca1">CA</string>
+    <string name="stdNo">Student Number</string>
 </resources>
