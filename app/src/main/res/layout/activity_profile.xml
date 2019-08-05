@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF3E3"
+    tools:context=".User.profile">
+
+    <TextView
+        android:id="@+id/userProfile"
+        android:layout_width="186dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/userProfile"
+        android:textAlignment="center"
+        android:textColor="#FF5722"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.011"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:layout_width="236dp"
+        android:layout_height="331dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#F8DEB8"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.645">
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:ems="10"
+            android:enabled="false"
+            android:inputType="textPersonName"
+            android:text="Viraj"
+            android:textColor="#D52F26" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:ems="10"
+            android:enabled="false"
+            android:inputType="textPersonName"
+            android:text="it18145526@my.sliit.lk"
+            android:textColor="#D52F26" />
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:ems="10"
+            android:enabled="false"
+            android:inputType="textPersonName"
+            android:text="IT18145526"
+            android:textColor="#D52F26" />
+
+        <EditText
+            android:id="@+id/gpa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:ems="10"
+            android:enabled="false"
+            android:inputType="textPersonName"
+            android:text="3.94"
+            android:textColor="#D52F26" />
+
+        <EditText
+            android:id="@+id/year"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:ems="10"
+            android:enabled="false"
+            android:inputType="textPersonName"
+            android:text="2"
+            android:textColor="#D52F26" />
+
+        <EditText
+            android:id="@+id/semester"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:ems="10"
+            android:enabled="false"
+            android:inputType="textPersonName"
+            android:text="2"
+            android:textColor="#D52F26" />
+
+        <EditText
+            android:id="@+id/role"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:ems="10"
+            android:enabled="false"
+            android:inputType="textPersonName"
+            android:text="Undergratuate"
+            android:textColor="#D52F26"
+            tools:text="Undergratuate" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="109dp"
+        android:layout_height="331dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.669">
+
+        <TextView
+            android:id="@+id/lebelUserName"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:fontFamily="monospace"
+            android:text="@string/prompt_username"
+            android:textColor="#6B2A16"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/lebelEmail"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:fontFamily="monospace"
+            android:text="@string/email"
+            android:textColor="#6B2A16"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/lebelRegNo"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:fontFamily="monospace"
+            android:text="@string/regNoShort"
+            android:textColor="#6B2A16"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/lebelGPA"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:fontFamily="monospace"
+            android:text="@string/gpa"
+            android:textColor="#6B2A16"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/lebelYear"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:fontFamily="monospace"
+            android:text="@string/year"
+            android:textColor="#6B2A16"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/lebelSemester"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:fontFamily="monospace"
+            android:text="@string/semester"
+            android:textColor="#6B2A16"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/lebelRole"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:fontFamily="monospace"
+            android:text="@string/role"
+            android:textColor="#6B2A16"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/update"
+        android:layout_width="121dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/update"
+        android:textColor="#0B1136"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.935" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="102dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:longClickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.105"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
