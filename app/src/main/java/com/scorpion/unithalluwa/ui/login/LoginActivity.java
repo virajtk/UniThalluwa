@@ -1,8 +1,12 @@
 package  com.scorpion.unithalluwa.ui.login;
 
 import android.app.Activity;
+
+import androidx.annotation.RequiresApi;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+
+import android.os.Build;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
@@ -19,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.scorpion.unithalluwa.R;
+import com.scorpion.unithalluwa.User.Main;
 import com.scorpion.unithalluwa.ui.login.LoginViewModel;
 import com.scorpion.unithalluwa.ui.login.LoginViewModelFactory;
 
@@ -55,6 +60,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         loginViewModel.getLoginResult().observe(this, new Observer<LoginResult>() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onChanged(@Nullable LoginResult loginResult) {
                 if (loginResult == null) {
@@ -69,8 +75,12 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 setResult(Activity.RESULT_OK);
 
+                setContentView(R.layout.activity_profile);
+                //setContentView(R.layout.activity_register);
+
+
                 //Complete and destroy login activity once successful
-                finish();
+                //finish();
             }
         });
 
