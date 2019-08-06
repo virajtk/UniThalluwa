@@ -9,4 +9,11 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="ReleventYear">Year</string>
+    <string name="ReleventSemester">Semester</string>
+    <string name="ReleventModule">Module</string>
+    <string name="ReleventTopic">Topic</string>
+    <string name="releventImport">Import</string>
+    <string name="saveChanges">SaveChanges</string>
+    <string name="BackButton">Back</string>
 </resources>

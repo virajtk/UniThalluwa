@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="DropDownBox">1stYear, 2ndYear, 3rdYear, 4thYear</string-array>
+    <string-array name="DropBoxSemester">1St Semester, 2nd Semester</string-array>
+    <string-array name="selectYear">1st Year, 2nd Year ,33rd Year, 4th Year</string-array>
+    <string-array name="year">1 stYear, 2 ndYear, 3 rdYear, 4 thYear</string-array>
+    <string-array name="Year">1 stYear, 2 ndYear, 3rdYear, 4thYear</string-array>
+    <string-array name="Semester">1stSemester, 2ndSemester</string-array>
+    <string-array name="Module">IP, MC, ICS, CS</string-array>
+</resources>
