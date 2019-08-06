@@ -13,46 +13,42 @@ import android.widget.Toast;
 
 import com.scorpion.unithalluwa.R;
 
-public class AddResultActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
-    private Button button3;
+public class AddCAMarks extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+    private Button button4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_result);
+        setContentView(R.layout.activity_add_camarks);
 
-        Spinner spinner = findViewById(R.id.spinner3);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.year, android.R.layout.simple_spinner_item);
+        Spinner spinner = findViewById(R.id.spinner1);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.subjects, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
-
-
-        button3 = (Button) findViewById(R.id.button3);
-        button3.setOnClickListener(new View.OnClickListener() {
+        button4 = (Button) findViewById(R.id.button4);
+        button4.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view1) {
                 openReport();
             }
         });
-
     }
 
     public void openReport(){
-        Intent intent = new Intent(this,ReportActivity.class);
-        startActivity(intent);
+        Intent intent1 = new Intent(this,ReportActivity.class);
+        startActivity(intent1);
     }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        String text1 = adapterView.getItemAtPosition(i).toString();
-        Toast.makeText(adapterView.getContext(), text1, Toast.LENGTH_SHORT);
+        String text = adapterView.getItemAtPosition(i).toString();
+        Toast.makeText(adapterView.getContext(), text, Toast.LENGTH_SHORT);
+
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
-
-
 }
