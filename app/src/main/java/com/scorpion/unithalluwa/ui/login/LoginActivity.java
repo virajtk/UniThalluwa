@@ -1,8 +1,13 @@
 package  com.scorpion.unithalluwa.ui.login;
 
 import android.app.Activity;
+
+import androidx.annotation.RequiresApi;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
@@ -18,7 +23,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.scorpion.unithalluwa.Main.MainUI;
 import com.scorpion.unithalluwa.R;
+import com.scorpion.unithalluwa.User.Main;
+import com.scorpion.unithalluwa.User.Register;
 import com.scorpion.unithalluwa.ui.login.LoginViewModel;
 import com.scorpion.unithalluwa.ui.login.LoginViewModelFactory;
 
@@ -37,6 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         final EditText passwordEditText = findViewById(R.id.password);
         final Button loginButton = findViewById(R.id.login);
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);
+        Button regButton = findViewById(R.id.registerBtn);
 
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
             @Override
@@ -55,6 +64,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         loginViewModel.getLoginResult().observe(this, new Observer<LoginResult>() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onChanged(@Nullable LoginResult loginResult) {
                 if (loginResult == null) {
@@ -69,8 +79,15 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 setResult(Activity.RESULT_OK);
 
+                Intent i = new Intent(getApplicationContext(), MainUI.class);
+                startActivity(i);
+
+                //setContentView(R.layout.activity_profile);
+                //setContentView(R.layout.activity_register);
+
+
                 //Complete and destroy login activity once successful
-                finish();
+                //finish();
             }
         });
 
@@ -111,6 +128,14 @@ public class LoginActivity extends AppCompatActivity {
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
+            }
+        });
+
+        regButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), Register.class);
+                startActivity(i);
             }
         });
     }
