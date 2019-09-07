@@ -1,4 +1,4 @@
-package com.scorpion.unithalluwa.User;
+package com.scorpion.unithalluwa.User_UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,16 +10,16 @@ import android.widget.Button;
 import com.scorpion.unithalluwa.R;
 import com.scorpion.unithalluwa.ui.login.LoginActivity;
 
-public class Register extends AppCompatActivity {
+public class profile extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_profile);
 
-        Button regButton = findViewById(R.id.regbtn);
+        Button logoutbtn = findViewById(R.id.logout);
 
-        regButton.setOnClickListener(new View.OnClickListener() {
+        logoutbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), LoginActivity.class);

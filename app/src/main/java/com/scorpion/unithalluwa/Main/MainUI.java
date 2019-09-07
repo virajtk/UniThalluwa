@@ -14,7 +14,7 @@ import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
 import com.scorpion.unithalluwa.R;
-import com.scorpion.unithalluwa.User.profile;
+import com.scorpion.unithalluwa.User_UI.profile;
 import com.scorpion.unithalluwa.ui.login.LoginActivity;
 
 import androidx.drawerlayout.widget.DrawerLayout;

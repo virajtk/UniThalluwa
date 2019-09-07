@@ -1,4 +1,4 @@
-package com.scorpion.unithalluwa.User;
+package com.scorpion.unithalluwa.User_UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 

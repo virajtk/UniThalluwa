@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFF3E3"
-    tools:context=".User.profile">
+    tools:context=".User_UI.profile">
 
     <TextView
         android:id="@+id/userProfile"
