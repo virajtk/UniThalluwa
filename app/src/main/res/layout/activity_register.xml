@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/Registaion"
-        android:layout_width="194dp"
-        android:layout_height="46dp"
+        android:layout_width="230dp"
+        android:layout_height="43dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
