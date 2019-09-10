@@ -6,21 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".User_UI.Main">
 
-    <FrameLayout
-        android:layout_width="375dp"
-        android:layout_height="232dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="20dp">
 
-    </FrameLayout>
-
-    <view
-        class="androidx.appcompat.widget.SearchView"
-        id="@+id/view"
-        android:layout_width="362dp"
-        android:layout_height="45dp"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="271dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

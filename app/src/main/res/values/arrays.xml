@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string-array name="Role">Undergratuate, Gratuate, Lecturer, Leb Assistant</string-array>
-    <string-array name="yearDropdown">1st Year, 2nd Year, 3rd Year, 4th Year</string-array>
-</resources>
