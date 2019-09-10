@@ -50,8 +50,10 @@
             android:ems="@android:integer/config_shortAnimTime"
             android:hint="@string/prompt_username"
             android:inputType="textPersonName"
+            android:paddingLeft="10dp"
             android:textAllCaps="true"
-            android:textSize="12sp" />
+            android:textSize="18sp"
+            android:layout_margin="5dp"/>
 
         <EditText
             android:id="@+id/regNumber"
@@ -61,8 +63,10 @@
             android:ems="@android:integer/config_shortAnimTime"
             android:hint="@string/registaionNumber"
             android:inputType="textPersonName"
+            android:paddingLeft="10dp"
             android:textAllCaps="true"
-            android:textSize="12sp" />
+            android:textSize="18sp"
+            android:layout_margin="5dp"/>
 
         <EditText
             android:id="@+id/password"
@@ -72,8 +76,10 @@
             android:ems="@android:integer/config_shortAnimTime"
             android:hint="@string/prompt_password"
             android:inputType="textPersonName"
+            android:paddingLeft="10dp"
             android:textAllCaps="true"
-            android:textSize="12sp" />
+            android:textSize="18sp"
+            android:layout_margin="5dp"/>
 
         <EditText
             android:id="@+id/confirmPassword"
@@ -83,8 +89,10 @@
             android:ems="@android:integer/config_shortAnimTime"
             android:hint="@string/ConfirmPassword"
             android:inputType="textPersonName"
+            android:paddingLeft="10dp"
             android:textAllCaps="true"
-            android:textSize="12sp" />
+            android:textSize="18sp"
+            android:layout_margin="5dp"/>
 
         <EditText
             android:id="@+id/email"
@@ -94,16 +102,20 @@
             android:ems="@android:integer/config_shortAnimTime"
             android:hint="@string/email"
             android:inputType="textPersonName"
+            android:paddingLeft="10dp"
             android:textAllCaps="true"
-            android:textSize="12sp" />
+            android:textSize="18sp"
+            android:layout_margin="5dp"/>
 
         <Spinner
             android:id="@+id/roleDropbox"
             android:layout_width="match_parent"
             android:layout_height="39dp"
-            android:background="#80FFFFFF"
+            android:layout_margin="5dp"
             android:dropDownWidth="match_parent"
-            android:spinnerMode="dialog" />
+            android:paddingLeft="10dp"
+            android:spinnerMode="dialog"
+            android:background="@drawable/custom_spinner"/>
 
     </LinearLayout>
 
