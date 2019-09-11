@@ -13,6 +13,8 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
+import com.scorpion.unithalluwa.Assingment.AddAssignment;
+import com.scorpion.unithalluwa.Assingment.RetriveAssignment;
 import com.scorpion.unithalluwa.R;
 import com.scorpion.unithalluwa.User_UI.profile;
 import com.scorpion.unithalluwa.ui.login.LoginActivity;
@@ -101,8 +103,8 @@ public class MainUI extends AppCompatActivity
             //Intent i = new Intent(getApplicationContext(),#.class);
             //startActivity(i);
         } else if (id == R.id.nav_assignment) {
-            //Intent i = new Intent(getApplicationContext(),#.class);
-            //startActivity(i);
+            Intent i = new Intent(getApplicationContext(), RetriveAssignment.class);
+            startActivity(i);
         } else if (id == R.id.nav_GPA) {
             //Intent i = new Intent(getApplicationContext(),#.class);
             //startActivity(i);
