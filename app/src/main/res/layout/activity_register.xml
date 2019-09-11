@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/registerback1"
+    tools:context=".User_UI.Register">
+
+    <TextView
+        android:id="@+id/Registaion"
+        android:layout_width="299dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/alegreya_sans_sc_bold"
+        android:text="@string/registation"
+        android:textAlignment="viewStart"
+        android:textColor="@android:color/background_dark"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.129" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="386dp"
+        android:layout_height="316dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:baselineAligned="false"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/userName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_text_editor"
+            android:ems="@android:integer/config_shortAnimTime"
+            android:hint="@string/prompt_username"
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp"
+            android:textAllCaps="true"
+            android:textSize="18sp"
+            android:layout_margin="5dp"/>
+
+        <EditText
+            android:id="@+id/regNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_text_editor"
+            android:ems="@android:integer/config_shortAnimTime"
+            android:hint="@string/registaionNumber"
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp"
+            android:textAllCaps="true"
+            android:textSize="18sp"
+            android:layout_margin="5dp"/>
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_text_editor"
+            android:ems="@android:integer/config_shortAnimTime"
+            android:hint="@string/prompt_password"
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp"
+            android:textAllCaps="true"
+            android:textSize="18sp"
+            android:layout_margin="5dp"/>
+
+        <EditText
+            android:id="@+id/confirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_text_editor"
+            android:ems="@android:integer/config_shortAnimTime"
+            android:hint="@string/ConfirmPassword"
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp"
+            android:textAllCaps="true"
+            android:textSize="18sp"
+            android:layout_margin="5dp"/>
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_text_editor"
+            android:ems="@android:integer/config_shortAnimTime"
+            android:hint="@string/email"
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp"
+            android:textAllCaps="true"
+            android:textSize="18sp"
+            android:layout_margin="5dp"/>
+
+        <Spinner
+            android:id="@+id/roleDropbox"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:layout_margin="5dp"
+            android:dropDownWidth="match_parent"
+            android:paddingLeft="10dp"
+            android:spinnerMode="dialog"
+            android:background="@drawable/custom_spinner"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/regbtn"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/custom_primary_button"
+        android:fontFamily="@font/alegreya_sans_sc_bold"
+        android:text="@string/action_register"
+        android:textAllCaps="false"
+        android:textColor="@android:color/background_light"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.865" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

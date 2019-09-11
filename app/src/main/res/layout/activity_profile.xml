@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/registerback1"
+    tools:context=".User_UI.profile">
+
+    <TextView
+        android:id="@+id/userProfile"
+        android:layout_width="326dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/alegreya_sans_sc_bold"
+        android:text="@string/userProfile"
+        android:textAlignment="viewStart"
+        android:textColor="#000000"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.376"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.051"
+        tools:ignore="MissingConstraints"
+        />
+
+    <LinearLayout
+        android:layout_width="208dp"
+        android:layout_height="257dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.67">
+
+        <EditText
+            android:id="@+id/etUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/custom_text_editor"
+            android:clickable="true"
+            android:ems="10"
+            android:enabled="false"
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp"
+            android:text="Viraj"
+            android:textAllCaps="true"
+            android:textColor="#1B1A19"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/custom_text_editor"
+            android:clickable="true"
+            android:ems="10"
+            android:enabled="false"
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp"
+            android:text="it18145526@my.sliit.lk"
+            android:textAllCaps="true"
+            android:textColor="#1B1A19"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/custom_text_editor"
+            android:clickable="true"
+            android:ems="10"
+            android:enabled="false"
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp"
+            android:text="IT18145526"
+            android:textAllCaps="true"
+            android:textColor="#1B1A19"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/role"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/custom_text_editor"
+            android:clickable="true"
+            android:ems="10"
+            android:enabled="false"
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp"
+            android:text="Undergratuate"
+            android:textAllCaps="true"
+            android:textColor="#1B1A19"
+            android:textSize="18sp"
+            tools:text="Undergratuate" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="140dp"
+        android:layout_height="262dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.676">
+
+        <TextView
+            android:id="@+id/lebelUserName"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_margin="5dp"
+            android:fontFamily="sans-serif-medium"
+            android:paddingLeft="10dp"
+            android:text="@string/prompt_username"
+            android:textAllCaps="true"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/lebelEmail"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_margin="5dp"
+            android:fontFamily="sans-serif-medium"
+            android:paddingLeft="10dp"
+            android:text="@string/email"
+            android:textAllCaps="true"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/lebelRegNo"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_margin="5dp"
+            android:fontFamily="sans-serif-medium"
+            android:paddingLeft="10dp"
+            android:text="@string/regNoShort"
+            android:textAllCaps="true"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/lebelRole"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_margin="5dp"
+            android:fontFamily="sans-serif-medium"
+            android:paddingLeft="10dp"
+            android:text="@string/role"
+            android:textAllCaps="true"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/update"
+        android:layout_width="121dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/custom_primary_button"
+        android:fontFamily="@font/alegreya_sans_sc_bold"
+        android:text="@string/update"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.917" />
+
+    <ImageView
+        android:id="@+id/profilePicture"
+        android:layout_width="102dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:longClickable="true"
+        android:src="@drawable/adee"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.203" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="112dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/custom_remove_button"
+        android:text="Logout"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.968"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.918" />
+
+    <Button
+        android:id="@+id/chpassword"
+        android:layout_width="112dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/custom_secondry_button"
+        android:text="Change Pass"
+        android:textColor="#F8F7F7"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.028"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.918" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

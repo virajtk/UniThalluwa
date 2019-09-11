@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/male"
+            android:title="@string/userProfile" />
+        <item
+            android:id="@+id/nav_mark"
+            android:icon="@drawable/rate"
+            android:title="@string/menu_Mark" />
+        <item
+            android:id="@+id/nav_markingSchema"
+            android:icon="@drawable/file"
+            android:title="@string/menu_markingSchema" />
+        <item
+            android:id="@+id/nav_assignment"
+            android:icon="@drawable/document"
+            android:title="@string/menu_assignment" />
+    </group>
+
+    <item android:title="About">
+        <menu>
+            <item
+                android:id="@+id/nav_GPA"
+                android:icon="@drawable/about"
+                android:title="@string/menu_aboutgpa" />
+            <item
+                android:id="@+id/nav_req"
+                android:icon="@drawable/home"
+                android:title="@string/menu_req" />
+
+        </menu>
+    </item>
+
+</menu>

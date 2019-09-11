@@ -3,17 +3,51 @@
     <!-- Strings related to login -->
     <string name="prompt_username">User Name</string>
     <string name="prompt_password">Password</string>
-    <string name="action_register">Register</string>
+    <string name="action_register">Sign Up</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
+    <string name="welcome">"Welcome!"</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
-    <string name="ReleventYear">Year</string>
-    <string name="ReleventSemester">Semester</string>
-    <string name="ReleventModule">Module</string>
-    <string name="ReleventTopic">Topic</string>
-    <string name="releventImport">Import</string>
-    <string name="saveChanges">SaveChanges</string>
-    <string name="BackButton">Back</string>
+    <string name="title_activity_home">Home</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Viraj</string>
+    <string name="nav_header_subtitle">it18145526@my.sliit.lk</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="roleItems">
+        <item>Undergraduate</item>
+        <item>Graduate</item>
+        <item>Lecturer</item>
+        <item>Assistant Lecturer</item>
+        <item>Lab Assistant</item>
+    </string-array>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_Mark">Marks</string>
+    <string name="menu_markingSchema">Marking Schema</string>
+    <string name="menu_assignment">Assignments</string>
+    <string name="menu_aboutgpa">GPA</string>
+    <string name="menu_req">Requirements</string>
+    <string name="registation">Registration</string>
+    <string name="registaionNumber">Registration Number</string>
+    <string name="ConfirmPassword">Confirm Password</string>
+    <string name="email">E-mail</string>
+    <string name="role">Role</string>
+    <string name="year">Year</string>
+    <string name="semester">Semester</string>
+    <string name="sem1">Semester 1</string>
+    <string name="sem2">Semester 2</string>
+    <string name="cgpa">Current CGPA</string>
+    <string name="profilePicture">Profile Picture</string>
+    <string name="userProfile">User Profile</string>
+    <string name="regNoShort">Reg Number</string>
+    <string name="gpa">GPA</string>
+    <string name="update">Update</string>
+    <string name="title_activity_main_ui">Home</string>
+    <string name="signout">Sign out</string>
+
+
 </resources>
