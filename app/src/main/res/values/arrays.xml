@@ -3,4 +3,9 @@
     <string-array name="Role">Undergratuate, Gratuate, Lecturer, Leb Assistant</string-array>
     <string-array name="yearDropdown">1st Year, 2nd Year, 3rd Year, 4th Year</string-array>
     <string-array name="subDrop">Subject</string-array>
+    <string-array name="DropDownBox">1st Year, 2nd Year, 3rd Year, 4th Year</string-array>
+    <string-array name="DropBoxSemester">1St Semester, 2nd Semester</string-array>
+
+    <string-array name="Semester">1stSemester, 2ndSemester</string-array>
+    <string-array name="Module">IP, MC, ICS, CS</string-array>
 </resources>

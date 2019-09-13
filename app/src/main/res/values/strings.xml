@@ -3,7 +3,7 @@
     <!-- Strings related to login -->
     <string name="prompt_username">User Name</string>
     <string name="prompt_password">Password</string>
-    <string name="action_register">Register</string>
+    <string name="action_register">Sign Up</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="welcome">"Welcome!"</string>
     <string name="invalid_username">Not a valid username</string>
@@ -16,6 +16,14 @@
     <string name="nav_header_subtitle">it18145526@my.sliit.lk</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+
+    <string-array name="roleItems">
+        <item>Undergraduate</item>
+        <item>Graduate</item>
+        <item>Lecturer</item>
+        <item>Assistant Lecturer</item>
+        <item>Lab Assistant</item>
+    </string-array>
 
     <string name="menu_home">Home</string>
     <string name="menu_Mark">Marks</string>
@@ -40,4 +48,7 @@
     <string name="update">Update</string>
     <string name="title_activity_main_ui">Home</string>
     <string name="signout">Sign out</string>
+    <string name="reset">Reset</string>
+
+
 </resources>

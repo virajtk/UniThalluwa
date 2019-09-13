@@ -25,10 +25,7 @@ import android.widget.Toast;
 
 import com.scorpion.unithalluwa.Main.MainUI;
 import com.scorpion.unithalluwa.R;
-import com.scorpion.unithalluwa.User.Main;
-import com.scorpion.unithalluwa.User.Register;
-import com.scorpion.unithalluwa.ui.login.LoginViewModel;
-import com.scorpion.unithalluwa.ui.login.LoginViewModelFactory;
+import com.scorpion.unithalluwa.User_UI.Register;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -41,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         loginViewModel = ViewModelProviders.of(this, new LoginViewModelFactory())
                 .get(LoginViewModel.class);
 
-        final EditText usernameEditText = findViewById(R.id.username);
+        final EditText usernameEditText = findViewById(R.id.etUsername);
         final EditText passwordEditText = findViewById(R.id.password);
         final Button loginButton = findViewById(R.id.login);
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);

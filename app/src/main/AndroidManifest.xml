@@ -9,27 +9,37 @@
         android:roundIcon="@drawable/unithalluwalogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".Main.MainUI"
-            android:label="@string/title_activity_main_ui"
-            android:parentActivityName=".User.profile"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.scorpion.unithalluwa.User.profile" />
-        </activity>
-        <activity android:name=".User.profile" />
-        <activity android:name=".User.Register" />
-        <activity android:name=".User.Main" />
-        <activity
-            android:name=".ui.login.LoginActivity"
-            android:label="@string/app_name">
+        <activity android:name=".Main.loading">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Assingment.RetriveAssignment"></activity>
+        <activity android:name=".Assingment.EditAssignment"></activity>
+        <activity android:name=".Assingment.AddAssignment"></activity>
+        <activity
+            android:name=".Main.MainUI"
+            android:label="@string/title_activity_main_ui"
+            android:parentActivityName=".User_UI.profile"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.scorpion.unithalluwa.User_UI.profile" />
+        </activity>
+        <activity android:name=".User_UI.profile" />
+        <activity android:name=".User_UI.Register" />
+        <activity android:name=".User_UI.Main" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:label="@string/app_name">
+
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
