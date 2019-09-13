@@ -57,5 +57,13 @@
     <string name="studentname">Student Name</string>
     <string name="camarks">CA Marks</string>
 
+    <string-array name="subjectList">
+        <item>IP</item>
+        <item>ICS</item>
+        <item>MC</item>
+        <item>CS</item>
+        <item>OOP</item>
+    </string-array>
+
 
 </resources>
