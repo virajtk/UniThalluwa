@@ -49,6 +49,7 @@
     <string name="title_activity_main_ui">Home</string>
     <string name="signout">Sign out</string>
     <string name="reset">Reset</string>
+    <string name="addcamarks">Add CA Marks</string>
 
 
 </resources>

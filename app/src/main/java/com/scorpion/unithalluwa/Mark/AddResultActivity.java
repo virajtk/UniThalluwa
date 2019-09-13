@@ -21,9 +21,9 @@ public class AddResultActivity extends AppCompatActivity implements AdapterView.
         setContentView(R.layout.activity_add_result);
 
         Spinner spinner = findViewById(R.id.spinner3);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.year, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+       // ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.year, android.R.layout.simple_spinner_item);
+        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+       // spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
 
