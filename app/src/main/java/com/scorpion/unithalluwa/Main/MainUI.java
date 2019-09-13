@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import com.google.android.material.navigation.NavigationView;
 import com.scorpion.unithalluwa.Assingment.AddAssignment;
 import com.scorpion.unithalluwa.Assingment.RetriveAssignment;
+import com.scorpion.unithalluwa.Mark.AddCAMarks;
 import com.scorpion.unithalluwa.R;
 import com.scorpion.unithalluwa.User_UI.profile;
 import com.scorpion.unithalluwa.ui.login.LoginActivity;
@@ -97,8 +98,8 @@ public class MainUI extends AppCompatActivity
             Intent i = new Intent(getApplicationContext(),profile.class);
             startActivity(i);
         } else if (id == R.id.nav_mark) {
-            //Intent i = new Intent(getApplicationContext(),#.class);
-            //startActivity(i);
+            Intent i = new Intent(getApplicationContext(), AddCAMarks.class);
+            startActivity(i);
         } else if (id == R.id.nav_markingSchema) {
             //Intent i = new Intent(getApplicationContext(),#.class);
             //startActivity(i);

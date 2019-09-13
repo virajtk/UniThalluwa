@@ -50,6 +50,12 @@
     <string name="signout">Sign out</string>
     <string name="reset">Reset</string>
     <string name="addcamarks">Add CA Marks</string>
+    <string name="subject">Subject</string>
+    <string name="midmark">Mid Mark</string>
+    <string name="assignments">Assignments</string>
+    <string name="submit">Submit</string>
+    <string name="studentname">Student Name</string>
+    <string name="camarks">CA Marks</string>
 
 
 </resources>
