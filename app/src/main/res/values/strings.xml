@@ -48,6 +48,7 @@
     <string name="update">Update</string>
     <string name="title_activity_main_ui">Home</string>
     <string name="signout">Sign out</string>
+    <string name="reset">Reset</string>
 
 
 </resources>

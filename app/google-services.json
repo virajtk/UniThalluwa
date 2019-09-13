@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "879357841709",
+    "firebase_url": "https://unithalluwa-5f29b.firebaseio.com",
+    "project_id": "unithalluwa-5f29b",
+    "storage_bucket": "unithalluwa-5f29b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:879357841709:android:9b35d9201a775642aec3a4",
+        "android_client_info": {
+          "package_name": "com.scorpion.unithalluwa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "879357841709-if054tqg9bbgo8rdrl9dpuj63rcibm0i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.scorpion.unithalluwa",
+            "certificate_hash": "c2abf38cfc1b0e4d5dfe8172a5b6b3d370b946ab"
+          }
+        },
+        {
+          "client_id": "879357841709-71610c1rpmnal0q08j6aroph9unvm2tp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCW-U5V9aNy6F-Z3oBXGK8a2Y8JWv_8Rkc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "879357841709-71610c1rpmnal0q08j6aroph9unvm2tp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

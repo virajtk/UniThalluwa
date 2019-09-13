@@ -43,7 +43,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/userName"
+            android:id="@+id/etUserName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/custom_text_editor"
@@ -56,7 +56,7 @@
             android:layout_margin="5dp"/>
 
         <EditText
-            android:id="@+id/regNumber"
+            android:id="@+id/etRegNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/custom_text_editor"
@@ -95,7 +95,7 @@
             android:layout_margin="5dp"/>
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/custom_text_editor"
@@ -133,11 +133,49 @@
         android:textAllCaps="false"
         android:textColor="@android:color/background_light"
         android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.865" />
+        app:layout_constraintVertical_bias="0.821" />
+
+    <Button
+        android:id="@+id/resetbtn"
+        android:layout_width="170dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/custom_secondry_button"
+        android:fontFamily="@font/alegreya_sans_sc_bold"
+        android:text="@string/reset"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/regbtn"
+        app:layout_constraintVertical_bias="0.111" />
+
+    <Button
+        android:id="@+id/signinBtn"
+        android:layout_width="399dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/common_google_signin_btn_text_light_normal_background"
+        android:fontFamily="@font/alegreya_sans_sc_bold"
+        android:text="Already have an Account?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
