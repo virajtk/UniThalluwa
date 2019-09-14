@@ -14,14 +14,14 @@ public class selectPastPapers extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_select_past_papers);
+        //setContentView(R.layout.a);
 
-        Spinner spinner1 = findViewById(R.id.yearSpinner);
+        //Spinner spinner1 = findViewById(R.id.yearSpinner);
 
-        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(selectPastPapers.this,
-                android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.year));
-        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner1.setAdapter(myAdapter);
+//        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(selectPastPapers.this,
+//                android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.year));
+//        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinner1.setAdapter(myAdapter);
 
 //        final Spinner yearspinner = (Spinner) findViewById(R.id.yearSpinner);
 //
