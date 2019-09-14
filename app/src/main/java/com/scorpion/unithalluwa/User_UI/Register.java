@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -22,6 +24,8 @@ import com.scorpion.unithalluwa.R;
 import com.scorpion.unithalluwa.data.model.User;
 import com.scorpion.unithalluwa.ui.login.LoginActivity;
 
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.regex.Pattern;
 
 public class Register extends AppCompatActivity {
@@ -31,6 +35,7 @@ public class Register extends AppCompatActivity {
     User user;
     DatabaseReference dbRef;
     Long childCount;
+    boolean existUser;
 
     //method to clear all user inputs
     public void resetFields(){
@@ -69,18 +74,18 @@ public class Register extends AppCompatActivity {
         roleSpinner.setAdapter(roleAdapter);
 
 
-        dbRef = FirebaseDatabase.getInstance().getReference().child("User");
-        dbRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                childCount = dataSnapshot.getChildrenCount();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
+//        dbRef = FirebaseDatabase.getInstance().getReference().child("User");
+//        dbRef.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                childCount = dataSnapshot.getChildrenCount();
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
 
 
         txtUserName = findViewById(R.id.etUserName);
@@ -88,6 +93,40 @@ public class Register extends AppCompatActivity {
         txtPassword = findViewById(R.id.password);
         txtConfirmPassword = findViewById(R.id.confirmPassword);
         txtEmail = findViewById(R.id.etEmail);
+
+
+        txtUserName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+                dbRef = FirebaseDatabase.getInstance().getReference().child("User");
+                dbRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        existUser = dataSnapshot.hasChild(txtUserName.getText().toString().trim());
+                        String msg = String.valueOf(existUser);
+                        Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+            }
+        });
 
 
         registerBtn = findViewById(R.id.regbtn);
@@ -98,73 +137,78 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                dbRef = FirebaseDatabase.getInstance().getReference().child("User");
+
 
                 try {
+                    dbRef = FirebaseDatabase.getInstance().getReference().child("User");
+
                     //data validation
-                    if (TextUtils.isEmpty(txtUserName.getText().toString())){
-                        Toast.makeText(getApplicationContext(),"Please enter user name" , Toast.LENGTH_SHORT).show();
-                        txtPassword.setText(null);
-                        txtConfirmPassword.setText(null);
+                    if (existUser){
+                        String message = "username : "+txtUserName.getText().toString().trim()+" already exists";
+                        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                        txtUserName.setText(null);
                     }
-                    else if (TextUtils.isEmpty(txtRegNumber.getText().toString())){
-                        Toast.makeText(getApplicationContext(),"Please enter Registration Number" , Toast.LENGTH_SHORT).show();
-                        txtPassword.setText(null);
-                        txtConfirmPassword.setText(null);
-                    }
-                    else if (TextUtils.isEmpty(txtPassword.getText().toString())){
-                        Toast.makeText(getApplicationContext(),"Please enter a password" , Toast.LENGTH_SHORT).show();
-                        txtConfirmPassword.setText(null);
-                    }
-                    else if (TextUtils.isEmpty(txtConfirmPassword.getText().toString())){
-                        Toast.makeText(getApplicationContext(),"Please re-enter password" , Toast.LENGTH_SHORT).show();
-                        txtPassword.setText(null);
-                    }
-                    else if (TextUtils.isEmpty(txtEmail.getText().toString())){
-                        Toast.makeText(getApplicationContext(),"Please enter an email" , Toast.LENGTH_SHORT).show();
-                        txtPassword.setText(null);
-                        txtConfirmPassword.setText(null);
-                    }
-                    else if ( !txtPassword.getText().toString().equals(txtConfirmPassword.getText().toString()) ){
-                        Toast.makeText(getApplicationContext(),"Passwords do not match" , Toast.LENGTH_SHORT).show();
-                        txtPassword.setText(null);
-                        txtConfirmPassword.setText(null);
-                    }
-                    else if(!EMAIL_ADDRESS_PATTERN.matcher(txtEmail.getText().toString().trim()).matches()) {
-                        Toast.makeText(getApplicationContext(), "Invalid Email Address", Toast.LENGTH_SHORT).show();
-                        txtPassword.setText(null);
-                        txtConfirmPassword.setText(null);
-                        txtEmail.setText(null);
-                    }
-                    //do the Registration
                     else {
 
-                        //take inputs from the user and assign them to user object
-                        user.setUserName(txtUserName.getText().toString().trim());
-                        user.setRegNumber(txtRegNumber.getText().toString().trim());
-                        user.setPassword(txtPassword.getText().toString().trim());
-                        user.setEmail(txtEmail.getText().toString().trim());
-                        user.setRole(roleSpinner.getSelectedItem().toString());
-
-                        //Insert in to the database
-                        //dbRef.push().setValue(user);
-                        String nextID = String.valueOf(childCount+1);
-                        String finalID = null;
-                        if(nextID.length()==1){
-                            finalID = "U00"+nextID;
+                        if (TextUtils.isEmpty(txtUserName.getText().toString())) {
+                            Toast.makeText(getApplicationContext(), "Please enter user name", Toast.LENGTH_SHORT).show();
+                            txtPassword.setText(null);
+                            txtConfirmPassword.setText(null);
+                        } else if (TextUtils.isEmpty(txtRegNumber.getText().toString())) {
+                            Toast.makeText(getApplicationContext(), "Please enter Registration Number", Toast.LENGTH_SHORT).show();
+                            txtPassword.setText(null);
+                            txtConfirmPassword.setText(null);
+                        } else if (TextUtils.isEmpty(txtPassword.getText().toString())) {
+                            Toast.makeText(getApplicationContext(), "Please enter a password", Toast.LENGTH_SHORT).show();
+                            txtConfirmPassword.setText(null);
+                        } else if (TextUtils.isEmpty(txtConfirmPassword.getText().toString())) {
+                            Toast.makeText(getApplicationContext(), "Please re-enter password", Toast.LENGTH_SHORT).show();
+                            txtPassword.setText(null);
+                        } else if (TextUtils.isEmpty(txtEmail.getText().toString())) {
+                            Toast.makeText(getApplicationContext(), "Please enter an email", Toast.LENGTH_SHORT).show();
+                            txtPassword.setText(null);
+                            txtConfirmPassword.setText(null);
+                        } else if (!txtPassword.getText().toString().equals(txtConfirmPassword.getText().toString())) {
+                            Toast.makeText(getApplicationContext(), "Passwords do not match", Toast.LENGTH_SHORT).show();
+                            txtPassword.setText(null);
+                            txtConfirmPassword.setText(null);
+                        } else if (!EMAIL_ADDRESS_PATTERN.matcher(txtEmail.getText().toString().trim()).matches()) {
+                            Toast.makeText(getApplicationContext(), "Invalid Email Address", Toast.LENGTH_SHORT).show();
+                            txtPassword.setText(null);
+                            txtConfirmPassword.setText(null);
+                            txtEmail.setText(null);
                         }
-                        else if(nextID.length() == 2){
-                            finalID = "U0"+nextID;
+
+                        //do the Registration
+                        else {
+
+                            //take inputs from the user and assign them to user object
+                            user.setUserName(txtUserName.getText().toString().trim());
+                            user.setRegNumber(txtRegNumber.getText().toString().trim());
+                            user.setPassword(txtPassword.getText().toString().trim());
+                            user.setEmail(txtEmail.getText().toString().trim());
+                            user.setRole(roleSpinner.getSelectedItem().toString());
+
+                            //Insert in to the database
+                            // dbRef.push().setValue(user);
+//                        String nextID = String.valueOf(childCount+1);
+//                        String finalID = null;
+//                        if(nextID.length()==1){
+//                            finalID = "U00"+nextID;
+//                        }
+//                        else if(nextID.length() == 2){
+//                            finalID = "U0"+nextID;
+//                        }
+//                        else if(nextID.length() == 3){
+//                            finalID = "U"+nextID;
+//                        }
+
+                            dbRef.child(user.getUserName()).setValue(user);
+
+                            Toast.makeText(getApplicationContext(), "Registration Successfully", Toast.LENGTH_SHORT).show();
+                            resetFields();
+
                         }
-                        else if(nextID.length() == 3){
-                            finalID = "U"+nextID;
-                        }
-
-                        dbRef.child(finalID).setValue(user);
-
-                        Toast.makeText(getApplicationContext(),"Registration Successfully" , Toast.LENGTH_SHORT).show();
-                        resetFields();
-
                     }
 
                 }catch (NumberFormatException e){
