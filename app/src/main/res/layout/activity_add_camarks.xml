@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/adeeshaBack"
+    android:background="@drawable/adeeshaback"
     tools:context=".Mark.AddCAMarks">
 
     <androidx.constraintlayout.widget.ConstraintLayout

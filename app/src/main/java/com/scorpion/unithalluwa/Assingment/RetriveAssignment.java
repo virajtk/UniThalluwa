@@ -15,11 +15,25 @@ public class RetriveAssignment extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_retrive_assignment);
 
-        Spinner  mySpinner = (Spinner) findViewById(R.id.spinner);
+        Spinner spinner1 = findViewById(R.id.spinner5);
 
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(RetriveAssignment.this,
-                android.R.layout.activity_list_item,getResources().getStringArray(R.array.DropDownBox));
-            myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            mySpinner.setAdapter(myAdapter);
+                android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.year));
+        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner1.setAdapter(myAdapter);
+
+        Spinner spinner2 = (Spinner)findViewById(R.id.spinner2);
+
+        ArrayAdapter<String> myAdapter1 = new ArrayAdapter<String>(RetriveAssignment.this,
+                android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.semester));
+        myAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner2.setAdapter(myAdapter1);
+
+        Spinner spinner3 = (Spinner)findViewById(R.id.spinner);
+
+        ArrayAdapter<String> myAdapter2 = new ArrayAdapter<String>(RetriveAssignment.this,
+                android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.module));
+        myAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner3.setAdapter(myAdapter2);
     }
 }

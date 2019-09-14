@@ -66,4 +66,25 @@
     </string-array>
 
 
+    <string-array name="semester">
+        <item> select semester</item>
+        <item>Semester1</item>
+        <item>Semester2</item>
+    </string-array>
+
+    <string-array name="year">
+        <item>select year </item>
+        <item>Year 1</item>
+        <item>Year 2</item>
+        <item>Year 3</item>
+        <item>Year 4</item>
+    </string-array>
+
+    <string-array name="module">
+        <item> select module</item>
+        <item>IP</item>
+        <item>MC</item>
+        <item>CS</item>
+        <item>ICS</item>
+    </string-array>
 </resources>

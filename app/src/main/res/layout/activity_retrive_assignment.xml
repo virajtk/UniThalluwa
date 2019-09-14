@@ -4,36 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/book22"
+    android:background="@drawable/lampbook"
     tools:context=".Assingment.RetriveAssignment">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="296dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Assignment"
-        android:textAlignment="center"
-        android:textColor="#F0D809"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/yellow"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.091" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:gravity="center"
+            android:textSize="32dp"
+            android:textColor="@color/pink"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Retrive Assignment"/>
+
+    </LinearLayout>
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="153dp"
-        android:layout_height="57dp"
+        android:layout_width="161dp"
+        android:layout_height="43dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/custom_text_editor"
         android:entries="@array/DropDownBox"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,15 +55,15 @@
         android:layout_marginBottom="8dp"
         android:text="Year"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/black"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.179"
+        app:layout_constraintHorizontal_bias="0.204"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.307" />
+        app:layout_constraintVertical_bias="0.315" />
 
     <TextView
         android:id="@+id/textView5"
@@ -72,24 +75,25 @@
         android:layout_marginBottom="8dp"
         android:text="Semester"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/black"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintHorizontal_bias="0.089"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.436" />
+        app:layout_constraintVertical_bias="0.435" />
 
     <Spinner
         android:id="@+id/spinner2"
-        android:layout_width="153dp"
-        android:layout_height="57dp"
+        android:layout_width="161dp"
+        android:layout_height="43dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/custom_text_editor"
         android:entries="@array/DropBoxSemester"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -108,20 +112,20 @@
         android:layout_marginBottom="8dp"
         android:text="Module"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/black"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.129"
+        app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.565" />
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="114dp"
-        android:layout_height="63dp"
+        android:layout_width="133dp"
+        android:layout_height="44dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -129,9 +133,10 @@
         android:layout_marginBottom="8dp"
 
 
-        android:background="@drawable/submitbutton"
+        android:background="@drawable/custom_primary_button"
         android:text="Submit"
-        android:textColor="@android:color/holo_blue_bright"
+
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.869"
@@ -141,12 +146,13 @@
 
     <Spinner
         android:id="@+id/spinner5"
-        android:layout_width="152dp"
-        android:layout_height="61dp"
+        android:layout_width="161dp"
+        android:layout_height="43dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/custom_text_editor"
         android:entries="@array/DropDownBox"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
