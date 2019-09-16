@@ -28,8 +28,8 @@
 
     <SearchView
         android:id="@+id/searchView"
-        android:layout_width="359dp"
-        android:layout_height="27dp"
+        android:layout_width="314dp"
+        android:layout_height="37dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
@@ -38,24 +38,26 @@
         android:queryHint="Search Here"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.225" />
+        app:layout_constraintVertical_bias="0.221" />
 
     <ListView
         android:id="@+id/myList"
-        android:layout_width="318dp"
-        android:layout_height="511dp"
+        android:layout_width="313dp"
+        android:layout_height="463dp"
         android:layout_marginStart="7dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/custom_text_editor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView"
-        app:layout_constraintVertical_bias="0.487" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.833" />
 
     <Button
         android:id="@+id/addBtn"
@@ -66,6 +68,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/custom_primary_button"
+        android:fontFamily="@font/alegreya_sans_sc_bold"
         android:text="@string/add"
         android:textColor="#F1F1F1"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -83,6 +86,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/custom_secondry_button"
+        android:fontFamily="@font/alegreya_sans_sc_bold"
         android:text="@string/update"
         android:textColor="#F1EFF1"
         app:layout_constraintBottom_toBottomOf="parent"
