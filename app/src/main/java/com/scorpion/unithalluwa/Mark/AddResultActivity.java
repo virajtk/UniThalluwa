@@ -55,14 +55,14 @@ public class AddResultActivity extends AppCompatActivity implements AdapterView.
                     else if (TextUtils.isEmpty(txtMark1.getText().toString()))
                         Toast.makeText(getApplicationContext(), "Please Enter Marks For sub5", Toast.LENGTH_SHORT).show();
                     else {
-                        marks.setMark1(Integer.parseInt(txtMark1.getText().toString().trim()));
-                        marks.setMark2(Integer.parseInt(txtMark2.getText().toString().trim()));
-                        marks.setMark3(Integer.parseInt(txtMark3.getText().toString().trim()));
-                        marks.setMark4(Integer.parseInt(txtMark4.getText().toString().trim()));
-                        marks.setMark5(Integer.parseInt(txtMark5.getText().toString().trim()));
+                        marks.setMark1(txtMark1.getText().toString().trim());
+                        marks.setMark2(txtMark2.getText().toString().trim());
+                        marks.setMark3(txtMark3.getText().toString().trim());
+                        marks.setMark4(txtMark4.getText().toString().trim());
+                        marks.setMark5(txtMark5.getText().toString().trim());
 
-                        dbref.push().setValue(marks);
-
+                        //dbref.push().setValue(marks);
+                        dbref.child("user1").setValue(marks);
                         Toast.makeText(getApplicationContext(), "Marks added Successfully!", Toast.LENGTH_SHORT).show();
                         clearControls();
                         openMark();
