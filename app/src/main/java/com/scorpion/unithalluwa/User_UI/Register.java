@@ -12,9 +12,14 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,6 +40,9 @@ public class Register extends AppCompatActivity {
     User user;
     DatabaseReference dbRef;
     boolean existUser;
+    ProgressBar progressBar;
+
+    FirebaseAuth firebaseAuth;
 
     //method to clear all user inputs
     public void resetFields(){
@@ -92,40 +100,43 @@ public class Register extends AppCompatActivity {
         txtPassword = findViewById(R.id.etPassword);
         txtConfirmPassword = findViewById(R.id.confirmPassword);
         txtEmail = findViewById(R.id.etEmail);
+        progressBar = findViewById(R.id.progressBar);
+
+        firebaseAuth = FirebaseAuth.getInstance();
 
 
-        txtUserName.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-                dbRef = FirebaseDatabase.getInstance().getReference().child("User");
-                dbRef.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        existUser = dataSnapshot.hasChild(txtUserName.getText().toString().trim());
-                        String msg = String.valueOf(existUser);
-                        Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
-
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-
-            }
-        });
+//        txtUserName.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable editable) {
+//
+//                dbRef = FirebaseDatabase.getInstance().getReference().child("User");
+//                dbRef.addValueEventListener(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                        existUser = dataSnapshot.hasChild(txtUserName.getText().toString().trim());
+////                        String msg = String.valueOf(existUser);
+////                        Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
+//
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                    }
+//                });
+//
+//            }
+//        });
 
 
         registerBtn = findViewById(R.id.regbtn);
@@ -136,57 +147,85 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                progressBar.setVisibility(View.VISIBLE);
 
+                //take inputs from the user and assign them to user object
+                user.setUserName(txtUserName.getText().toString().trim());
+                user.setRegNumber(txtRegNumber.getText().toString().trim());
+                user.setPassword(txtPassword.getText().toString().trim());
+                user.setEmail(txtEmail.getText().toString().trim());
+                user.setRole(roleSpinner.getSelectedItem().toString());
 
-                try {
-                    dbRef = FirebaseDatabase.getInstance().getReference().child("User");
+                firebaseAuth.createUserWithEmailAndPassword(user.getUserName(),
+                        user.getPassword()).addOnCompleteListener
+                        (new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                progressBar.setVisibility(View.GONE);
+                                if(task.isSuccessful()){
+                                    Toast.makeText(getApplicationContext(), "Registration Successfully", Toast.LENGTH_LONG).show();
+                                } else {
+                                    Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                }
 
-                    //data validation
-                    if (existUser){
-                        String message = "username : "+txtUserName.getText().toString().trim()+" already exists";
-                        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-                        txtUserName.setText(null);
-                    }
-                    else {
+                            }
+                        });
 
-                        if (TextUtils.isEmpty(txtUserName.getText().toString())) {
-                            Toast.makeText(getApplicationContext(), "Please enter user name", Toast.LENGTH_SHORT).show();
-                            txtPassword.setText(null);
-                            txtConfirmPassword.setText(null);
-                        } else if (TextUtils.isEmpty(txtRegNumber.getText().toString())) {
-                            Toast.makeText(getApplicationContext(), "Please enter Registration Number", Toast.LENGTH_SHORT).show();
-                            txtPassword.setText(null);
-                            txtConfirmPassword.setText(null);
-                        } else if (TextUtils.isEmpty(txtPassword.getText().toString())) {
-                            Toast.makeText(getApplicationContext(), "Please enter a password", Toast.LENGTH_SHORT).show();
-                            txtConfirmPassword.setText(null);
-                        } else if (TextUtils.isEmpty(txtConfirmPassword.getText().toString())) {
-                            Toast.makeText(getApplicationContext(), "Please re-enter password", Toast.LENGTH_SHORT).show();
-                            txtPassword.setText(null);
-                        } else if (TextUtils.isEmpty(txtEmail.getText().toString())) {
-                            Toast.makeText(getApplicationContext(), "Please enter an email", Toast.LENGTH_SHORT).show();
-                            txtPassword.setText(null);
-                            txtConfirmPassword.setText(null);
-                        } else if (!txtPassword.getText().toString().equals(txtConfirmPassword.getText().toString())) {
-                            Toast.makeText(getApplicationContext(), "Passwords do not match", Toast.LENGTH_SHORT).show();
-                            txtPassword.setText(null);
-                            txtConfirmPassword.setText(null);
-                        } else if (!EMAIL_ADDRESS_PATTERN.matcher(txtEmail.getText().toString().trim()).matches()) {
-                            Toast.makeText(getApplicationContext(), "Invalid Email Address", Toast.LENGTH_SHORT).show();
-                            txtPassword.setText(null);
-                            txtConfirmPassword.setText(null);
-                            txtEmail.setText(null);
-                        }
-
-                        //do the Registration
-                        else {
-
-                            //take inputs from the user and assign them to user object
-                            user.setUserName(txtUserName.getText().toString().trim());
-                            user.setRegNumber(txtRegNumber.getText().toString().trim());
-                            user.setPassword(txtPassword.getText().toString().trim());
-                            user.setEmail(txtEmail.getText().toString().trim());
-                            user.setRole(roleSpinner.getSelectedItem().toString());
+//                try {
+//                    dbRef = FirebaseDatabase.getInstance().getReference().child("User");
+//
+//                    //data validation
+//                    if (existUser){
+//                        String message = "username : "+txtUserName.getText().toString().trim()+" already exists";
+//                        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+//                        txtUserName.setText(null);
+//                    }
+//                    else {
+//
+//                        if (TextUtils.isEmpty(txtUserName.getText().toString())) {
+//                            Toast.makeText(getApplicationContext(), "Please enter user name", Toast.LENGTH_SHORT).show();
+//                            txtPassword.setText(null);
+//                            txtConfirmPassword.setText(null);
+//                        } else if (TextUtils.isEmpty(txtRegNumber.getText().toString())) {
+//                            Toast.makeText(getApplicationContext(), "Please enter Registration Number", Toast.LENGTH_SHORT).show();
+//                            txtPassword.setText(null);
+//                            txtConfirmPassword.setText(null);
+//                        } else if (TextUtils.isEmpty(txtPassword.getText().toString())) {
+//                            Toast.makeText(getApplicationContext(), "Please enter a password", Toast.LENGTH_SHORT).show();
+//                            txtConfirmPassword.setText(null);
+//                        } else if (TextUtils.isEmpty(txtConfirmPassword.getText().toString())) {
+//                            Toast.makeText(getApplicationContext(), "Please re-enter password", Toast.LENGTH_SHORT).show();
+//                            txtPassword.setText(null);
+//                        } else if (TextUtils.isEmpty(txtEmail.getText().toString())) {
+//                            Toast.makeText(getApplicationContext(), "Please enter an email", Toast.LENGTH_SHORT).show();
+//                            txtPassword.setText(null);
+//                            txtConfirmPassword.setText(null);
+//                        } else if (!txtPassword.getText().toString().equals(txtConfirmPassword.getText().toString())) {
+//                            Toast.makeText(getApplicationContext(), "Passwords do not match", Toast.LENGTH_SHORT).show();
+//                            txtPassword.setText(null);
+//                            txtConfirmPassword.setText(null);
+//                        } else if (!EMAIL_ADDRESS_PATTERN.matcher(txtEmail.getText().toString().trim()).matches()) {
+//                            Toast.makeText(getApplicationContext(), "Invalid Email Address", Toast.LENGTH_SHORT).show();
+//                            txtPassword.setText(null);
+//                            txtConfirmPassword.setText(null);
+//                            txtEmail.setText(null);
+//                        }
+//
+//                        //do the Registration
+//                        else {
+//
+//
+//
+//
+//
+//                            //take inputs from the user and assign them to user object
+//                            user.setUserName(txtUserName.getText().toString().trim());
+//                            user.setRegNumber(txtRegNumber.getText().toString().trim());
+//                            user.setPassword(txtPassword.getText().toString().trim());
+//                            user.setEmail(txtEmail.getText().toString().trim());
+//                            user.setRole(roleSpinner.getSelectedItem().toString());
+//
+//                            dbRef.child(user.getUserName()).setValue(user);
 
                             //Insert in to the database
                             // dbRef.push().setValue(user);
@@ -202,17 +241,17 @@ public class Register extends AppCompatActivity {
 //                            finalID = "U"+nextID;
 //                        }
 
-                            dbRef.child(user.getUserName()).setValue(user);
 
-                            Toast.makeText(getApplicationContext(), "Registration Successfully", Toast.LENGTH_SHORT).show();
+
+
                             resetFields();
 
-                        }
-                    }
+//                        }
+//                    }
 
-                }catch (NumberFormatException e){
-                    Toast.makeText(getApplicationContext(),"Invalid data !" , Toast.LENGTH_SHORT).show();
-                }
+//                }catch (NumberFormatException e){
+//                    Toast.makeText(getApplicationContext(),"Invalid data !" , Toast.LENGTH_SHORT).show();
+//                }
 
 
 
