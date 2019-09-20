@@ -9,7 +9,8 @@
         android:roundIcon="@drawable/unithalluwalogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".User_UI.UserLogin"></activity>
+        <activity android:name=".Mark.ManageMarks"></activity>
+        <activity android:name=".User_UI.UserLogin" />
         <activity android:name=".PastPapers_UI.editPastPapers" />
         <activity android:name=".PastPapers_UI.download_papersAndAnswers" />
         <activity android:name=".PastPapers_UI.selectPastPapers" />

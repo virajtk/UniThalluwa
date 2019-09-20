@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -14,7 +13,7 @@ import android.widget.Toast;
 import com.scorpion.unithalluwa.R;
 
 public class AddResultActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
-    private Button button3;
+    private Button addresultbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,18 +27,18 @@ public class AddResultActivity extends AppCompatActivity implements AdapterView.
 
 
 
-        button3 = (Button) findViewById(R.id.button3);
-        button3.setOnClickListener(new View.OnClickListener() {
+        addresultbtn =  findViewById(R.id.addresultbtn);
+        addresultbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openReport();
+                openMark();
             }
         });
 
     }
 
-    public void openReport(){
-        Intent intent = new Intent(this,ReportActivity.class);
+    public void openMark(){
+        Intent intent = new Intent(this,ManageMarks.class);
         startActivity(intent);
     }
 

@@ -16,6 +16,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.scorpion.unithalluwa.Assingment.AddAssignment;
 import com.scorpion.unithalluwa.Assingment.RetriveAssignment;
 import com.scorpion.unithalluwa.Mark.AddCAMarks;
+import com.scorpion.unithalluwa.Mark.ManageMarks;
 import com.scorpion.unithalluwa.PastPapers_UI.viewPastPapers;
 import com.scorpion.unithalluwa.R;
 import com.scorpion.unithalluwa.User_UI.profile;
@@ -99,7 +100,7 @@ public class MainUI extends AppCompatActivity
             Intent i = new Intent(getApplicationContext(),profile.class);
             startActivity(i);
         } else if (id == R.id.nav_mark) {
-            Intent i = new Intent(getApplicationContext(), AddCAMarks.class);
+            Intent i = new Intent(getApplicationContext(), ManageMarks.class);
             startActivity(i);
         } else if (id == R.id.nav_markingSchema) {
             Intent i = new Intent(getApplicationContext(), viewPastPapers.class);
