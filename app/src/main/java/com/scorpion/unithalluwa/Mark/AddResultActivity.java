@@ -4,36 +4,85 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.scorpion.unithalluwa.R;
+import com.scorpion.unithalluwa.data.model.Marks;
 
 public class AddResultActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+
+    private EditText txtMark1,txtMark2,txtMark3,txtMark4,txtMark5;
+    private DatabaseReference dbref;
+    Marks marks;
     private Button addresultbtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_result);
 
-        Spinner spinner = findViewById(R.id.spinner3);
-       // ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.year, android.R.layout.simple_spinner_item);
-        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-       // spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
+        txtMark1 = findViewById(R.id.mark1);
+        txtMark2 = findViewById(R.id.mark2);
+        txtMark3 = findViewById(R.id.mark3);
+        txtMark4 = findViewById(R.id.mark4);
+        txtMark5 = findViewById(R.id.mark5);
 
+        addresultbtn = findViewById(R.id.addresultbtn);
 
+        marks = new Marks();
 
-        addresultbtn =  findViewById(R.id.addresultbtn);
         addresultbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openMark();
+                dbref = FirebaseDatabase.getInstance().getReference().child("Marks");
+                try {
+                    if (TextUtils.isEmpty(txtMark1.getText().toString()))
+                        Toast.makeText(getApplicationContext(), "Please Enter Marks For sub1", Toast.LENGTH_SHORT).show();
+                    else if (TextUtils.isEmpty(txtMark1.getText().toString()))
+                        Toast.makeText(getApplicationContext(), "Please Enter Marks For sub2", Toast.LENGTH_SHORT).show();
+                    else if (TextUtils.isEmpty(txtMark1.getText().toString()))
+                        Toast.makeText(getApplicationContext(), "Please Enter Marks For sub3", Toast.LENGTH_SHORT).show();
+                    else if (TextUtils.isEmpty(txtMark1.getText().toString()))
+                        Toast.makeText(getApplicationContext(), "Please Enter Marks For sub4", Toast.LENGTH_SHORT).show();
+                    else if (TextUtils.isEmpty(txtMark1.getText().toString()))
+                        Toast.makeText(getApplicationContext(), "Please Enter Marks For sub5", Toast.LENGTH_SHORT).show();
+                    else {
+                        marks.setMark1(Integer.parseInt(txtMark1.getText().toString().trim()));
+                        marks.setMark2(Integer.parseInt(txtMark2.getText().toString().trim()));
+                        marks.setMark3(Integer.parseInt(txtMark3.getText().toString().trim()));
+                        marks.setMark4(Integer.parseInt(txtMark4.getText().toString().trim()));
+                        marks.setMark5(Integer.parseInt(txtMark5.getText().toString().trim()));
+
+                        dbref.push().setValue(marks);
+
+                        Toast.makeText(getApplicationContext(), "Marks added Successfully!", Toast.LENGTH_SHORT).show();
+                        clearControls();
+                        openMark();
+                    }
+                } catch (Exception e) {
+                    Toast.makeText(getApplicationContext(), "Please Enter Correct Marks", Toast.LENGTH_SHORT).show();
+                }
             }
         });
+
+
+        Spinner spinner = findViewById(R.id.spinner3);
+        // ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.year, android.R.layout.simple_spinner_item);
+        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
+
+
+        addresultbtn = findViewById(R.id.addresultbtn);
+
 
     }
 
@@ -51,6 +100,14 @@ public class AddResultActivity extends AppCompatActivity implements AdapterView.
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+    }
+
+    public void clearControls(){
+        txtMark1.setText(null);
+        txtMark2.setText(null);
+        txtMark3.setText(null);
+        txtMark4.setText(null);
+        txtMark5.setText(null);
     }
 
 
