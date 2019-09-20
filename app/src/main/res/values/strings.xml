@@ -62,6 +62,7 @@
     <string name="module_name">Module Name</string>
     <string name="search">Search</string>
     <string name="delete">Delete</string>
+    <string name="report">Report</string>
     <string-array name="roleItems">
         <item>Undergraduate</item>
         <item>Graduate</item>

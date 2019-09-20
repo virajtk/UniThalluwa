@@ -103,7 +103,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/addresultbtn"
         android:layout_width="102dp"
         android:layout_height="48dp"
         android:layout_marginStart="160dp"
@@ -124,7 +124,7 @@
         android:text="Delete"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.862"
-        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintStart_toEndOf="@+id/updatebtn"
         app:layout_constraintTop_toTopOf="parent" />
 
 
