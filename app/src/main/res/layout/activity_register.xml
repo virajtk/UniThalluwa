@@ -69,30 +69,30 @@
             android:layout_margin="5dp"/>
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:background="@drawable/custom_text_editor"
             android:ems="@android:integer/config_shortAnimTime"
             android:hint="@string/prompt_password"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             android:paddingLeft="10dp"
             android:textAllCaps="true"
-            android:textSize="18sp"
-            android:layout_margin="5dp"/>
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/confirmPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:background="@drawable/custom_text_editor"
             android:ems="@android:integer/config_shortAnimTime"
             android:hint="@string/ConfirmPassword"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             android:paddingLeft="10dp"
             android:textAllCaps="true"
-            android:textSize="18sp"
-            android:layout_margin="5dp"/>
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/etEmail"

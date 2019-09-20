@@ -24,7 +24,7 @@
         android:background="@drawable/custom_text_editor"
         android:hint="@string/prompt_username"
         android:importantForAutofill="no"
-        android:inputType="textEmailAddress"
+        android:inputType="text"
         android:paddingLeft="10dp"
         android:selectAllOnFocus="true"
         android:textSize="24sp"

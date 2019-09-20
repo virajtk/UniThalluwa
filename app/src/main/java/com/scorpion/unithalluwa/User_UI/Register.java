@@ -34,7 +34,6 @@ public class Register extends AppCompatActivity {
     Button registerBtn , resetBtn , signInBtn;
     User user;
     DatabaseReference dbRef;
-    Long childCount;
     boolean existUser;
 
     //method to clear all user inputs
@@ -90,7 +89,7 @@ public class Register extends AppCompatActivity {
 
         txtUserName = findViewById(R.id.etUserName);
         txtRegNumber = findViewById(R.id.etRegNumber);
-        txtPassword = findViewById(R.id.password);
+        txtPassword = findViewById(R.id.etPassword);
         txtConfirmPassword = findViewById(R.id.confirmPassword);
         txtEmail = findViewById(R.id.etEmail);
 

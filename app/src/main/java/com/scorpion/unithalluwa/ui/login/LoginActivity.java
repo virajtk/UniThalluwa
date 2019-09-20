@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
                 .get(LoginViewModel.class);
 
         final EditText usernameEditText = findViewById(R.id.etUsername);
-        final EditText passwordEditText = findViewById(R.id.password);
+        final EditText passwordEditText = findViewById(R.id.etPassword);
         final Button loginButton = findViewById(R.id.login);
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);
         Button regButton = findViewById(R.id.registerBtn);
