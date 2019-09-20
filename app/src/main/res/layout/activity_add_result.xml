@@ -137,8 +137,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frameLayout3"
-        android:layout_width="377dp"
-        android:layout_height="470dp"
+        android:layout_width="367dp"
+        android:layout_height="429dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
