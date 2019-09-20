@@ -30,8 +30,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frameLayout3"
-        android:layout_width="377dp"
-        android:layout_height="625dp"
+        android:layout_width="371dp"
+        android:layout_height="592dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:background="#59FFFFFF"
