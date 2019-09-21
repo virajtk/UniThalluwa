@@ -153,6 +153,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
         ]]>
 
         <EditText
@@ -161,17 +173,16 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="48dp"
             android:background="@drawable/custom_text_editor"
             android:ems="10"
             android:hint="@string/menu_Mark"
             android:inputType="textPersonName"
-            app:layout_constraintBottom_toTopOf="@+id/mark3"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.945"
+            app:layout_constraintHorizontal_bias="0.936"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText4"
-            app:layout_constraintVertical_bias="0.105" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.309" />
 
         <EditText
             android:id="@+id/mark3"
@@ -179,17 +190,16 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="52dp"
             android:background="@drawable/custom_text_editor"
             android:ems="10"
             android:hint="@string/menu_Mark"
             android:inputType="textPersonName"
-            app:layout_constraintBottom_toTopOf="@+id/mark4"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.945"
+            app:layout_constraintHorizontal_bias="0.943"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText5"
-            app:layout_constraintVertical_bias="0.131" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.461" />
 
         <EditText
             android:id="@+id/mark4"
@@ -197,17 +207,17 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="224dp"
+            android:layout_marginBottom="208dp"
             android:background="@drawable/custom_text_editor"
             android:ems="10"
             android:hint="@string/menu_Mark"
             android:inputType="textPersonName"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.945"
+            app:layout_constraintHorizontal_bias="0.936"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText6"
-            app:layout_constraintVertical_bias="0.196" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
         <EditText
             android:id="@+id/mark5"
@@ -222,10 +232,10 @@
             android:inputType="textPersonName"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.945"
+            app:layout_constraintHorizontal_bias="0.943"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mark4"
-            app:layout_constraintVertical_bias="0.363" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.814" />
 
         <TextView
             android:id="@+id/textView9"
