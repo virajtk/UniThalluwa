@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.scorpion.unithalluwa.R;
@@ -62,7 +64,10 @@ public class AddResultActivity extends AppCompatActivity implements AdapterView.
                         marks.setMark5(txtMark5.getText().toString().trim());
 
                         //dbref.push().setValue(marks);
-                        dbref.child("user1").setValue(marks);
+                        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+                        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+
+                        dbref.child(firebaseUser.getUid()).setValue(marks);
                         Toast.makeText(getApplicationContext(), "Marks added Successfully!", Toast.LENGTH_SHORT).show();
                         clearControls();
                         openMark();
