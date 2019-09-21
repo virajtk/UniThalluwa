@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/Registaion"
-        android:layout_width="299dp"
-        android:layout_height="43dp"
+        android:layout_width="329dp"
+        android:layout_height="78dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -22,15 +22,15 @@
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintHorizontal_bias="0.121"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.129" />
+        app:layout_constraintVertical_bias="0.07" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="386dp"
-        android:layout_height="316dp"
+        android:layout_width="377dp"
+        android:layout_height="305dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -39,34 +39,36 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.346">
 
         <EditText
             android:id="@+id/etUserName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:background="@drawable/custom_text_editor"
             android:ems="@android:integer/config_shortAnimTime"
             android:hint="@string/prompt_username"
             android:inputType="textPersonName"
             android:paddingLeft="10dp"
             android:textAllCaps="true"
-            android:textSize="18sp"
-            android:layout_margin="5dp"/>
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/etRegNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:background="@drawable/custom_text_editor"
             android:ems="@android:integer/config_shortAnimTime"
             android:hint="@string/registaionNumber"
             android:inputType="textPersonName"
             android:paddingLeft="10dp"
             android:textAllCaps="true"
-            android:textSize="18sp"
-            android:layout_margin="5dp"/>
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/etPassword"
@@ -112,10 +114,10 @@
             android:layout_width="match_parent"
             android:layout_height="39dp"
             android:layout_margin="5dp"
+            android:background="@drawable/custom_spinner"
             android:dropDownWidth="match_parent"
             android:paddingLeft="10dp"
-            android:spinnerMode="dialog"
-            android:background="@drawable/custom_spinner"/>
+            android:spinnerMode="dialog" />
 
     </LinearLayout>
 
@@ -139,7 +141,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.821" />
+        app:layout_constraintVertical_bias="0.81" />
 
     <Button
         android:id="@+id/resetbtn"
@@ -190,5 +192,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
+
+    <CheckBox
+        android:id="@+id/checkBoxRules"
+        android:layout_width="346dp"
+        android:layout_height="40dp"
+        android:text="@string/AcceptRules"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/signinBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.695" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

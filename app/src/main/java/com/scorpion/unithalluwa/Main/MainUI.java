@@ -19,8 +19,8 @@ import com.scorpion.unithalluwa.Mark.AddCAMarks;
 import com.scorpion.unithalluwa.Mark.ManageMarks;
 import com.scorpion.unithalluwa.PastPapers_UI.viewPastPapers;
 import com.scorpion.unithalluwa.R;
+import com.scorpion.unithalluwa.User_UI.UserLogin;
 import com.scorpion.unithalluwa.User_UI.profile;
-import com.scorpion.unithalluwa.ui.login.LoginActivity;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -44,8 +44,6 @@ public class MainUI extends AppCompatActivity
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), profile.class);
                 startActivity(i);
-                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show();
-
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -83,7 +81,7 @@ public class MainUI extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_logout) {
-            Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+            Intent i = new Intent(getApplicationContext(), UserLogin.class);
             startActivity(i);
         }
 

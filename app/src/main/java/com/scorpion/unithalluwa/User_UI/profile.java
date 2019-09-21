@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.scorpion.unithalluwa.R;
-import com.scorpion.unithalluwa.ui.login.LoginActivity;
 
 public class profile extends AppCompatActivity {
 
@@ -22,7 +21,7 @@ public class profile extends AppCompatActivity {
         logoutbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+                Intent i = new Intent(getApplicationContext(), UserLogin.class);
                 startActivity(i);
             }
         });

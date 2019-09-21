@@ -11,6 +11,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
@@ -27,7 +28,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.scorpion.unithalluwa.R;
 import com.scorpion.unithalluwa.data.model.User;
-import com.scorpion.unithalluwa.ui.login.LoginActivity;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -37,6 +37,7 @@ public class Register extends AppCompatActivity {
 
     EditText txtUserName, txtRegNumber , txtPassword , txtEmail , txtConfirmPassword;
     Button registerBtn , resetBtn , signInBtn;
+    CheckBox acceptRulesCheckBox;
     User user;
     DatabaseReference dbRef;
     boolean existUser;
@@ -52,6 +53,7 @@ public class Register extends AppCompatActivity {
         txtEmail.setText(null);
         txtPassword.setText(null);
         txtConfirmPassword.setText(null);
+        acceptRulesCheckBox.setChecked(false);
 
     }
 
@@ -72,8 +74,7 @@ public class Register extends AppCompatActivity {
 
         user = new User();
 
-        final Spinner roleSpinner = (Spinner) findViewById(R.id.roleDropbox);
-
+        final Spinner roleSpinner = findViewById(R.id.roleDropbox);
         ArrayAdapter<CharSequence> roleAdapter
                 = ArrayAdapter.createFromResource(Register.this , R.array.roleItems,
                 android.R.layout.simple_spinner_item);
@@ -81,28 +82,23 @@ public class Register extends AppCompatActivity {
         roleSpinner.setAdapter(roleAdapter);
 
 
-//        dbRef = FirebaseDatabase.getInstance().getReference().child("User");
-//        dbRef.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                childCount = dataSnapshot.getChildrenCount();
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
-
-
+        //Casting Views
         txtUserName = findViewById(R.id.etUserName);
         txtRegNumber = findViewById(R.id.etRegNumber);
         txtPassword = findViewById(R.id.etPassword);
         txtConfirmPassword = findViewById(R.id.confirmPassword);
         txtEmail = findViewById(R.id.etEmail);
         progressBar = findViewById(R.id.progressBar);
+        acceptRulesCheckBox = findViewById(R.id.checkBoxRules);
+
+        registerBtn = findViewById(R.id.regbtn);
+        resetBtn = findViewById(R.id.resetbtn);
+        signInBtn = findViewById(R.id.signinBtn);
 
         firebaseAuth = FirebaseAuth.getInstance();
+        dbRef = FirebaseDatabase.getInstance().getReference().child("User");
+
+
 
 
 //        txtUserName.addTextChangedListener(new TextWatcher() {
@@ -139,40 +135,25 @@ public class Register extends AppCompatActivity {
 //        });
 
 
-        registerBtn = findViewById(R.id.regbtn);
-        resetBtn = findViewById(R.id.resetbtn);
-        signInBtn = findViewById(R.id.signinBtn);
+
 
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                progressBar.setVisibility(View.VISIBLE);
+
+
+                String password = txtPassword.getText().toString();
+                String confirmPass = txtConfirmPassword.getText().toString();
 
                 //take inputs from the user and assign them to user object
                 user.setUserName(txtUserName.getText().toString().trim());
                 user.setRegNumber(txtRegNumber.getText().toString().trim());
-                user.setPassword(txtPassword.getText().toString().trim());
                 user.setEmail(txtEmail.getText().toString().trim());
                 user.setRole(roleSpinner.getSelectedItem().toString());
 
-                firebaseAuth.createUserWithEmailAndPassword(user.getUserName(),
-                        user.getPassword()).addOnCompleteListener
-                        (new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                progressBar.setVisibility(View.GONE);
-                                if(task.isSuccessful()){
-                                    Toast.makeText(getApplicationContext(), "Registration Successfully", Toast.LENGTH_LONG).show();
-                                } else {
-                                    Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                                }
-
-                            }
-                        });
-
 //                try {
-//                    dbRef = FirebaseDatabase.getInstance().getReference().child("User");
+
 //
 //                    //data validation
 //                    if (existUser){
@@ -182,82 +163,64 @@ public class Register extends AppCompatActivity {
 //                    }
 //                    else {
 //
-//                        if (TextUtils.isEmpty(txtUserName.getText().toString())) {
-//                            Toast.makeText(getApplicationContext(), "Please enter user name", Toast.LENGTH_SHORT).show();
-//                            txtPassword.setText(null);
-//                            txtConfirmPassword.setText(null);
-//                        } else if (TextUtils.isEmpty(txtRegNumber.getText().toString())) {
-//                            Toast.makeText(getApplicationContext(), "Please enter Registration Number", Toast.LENGTH_SHORT).show();
-//                            txtPassword.setText(null);
-//                            txtConfirmPassword.setText(null);
-//                        } else if (TextUtils.isEmpty(txtPassword.getText().toString())) {
-//                            Toast.makeText(getApplicationContext(), "Please enter a password", Toast.LENGTH_SHORT).show();
-//                            txtConfirmPassword.setText(null);
-//                        } else if (TextUtils.isEmpty(txtConfirmPassword.getText().toString())) {
-//                            Toast.makeText(getApplicationContext(), "Please re-enter password", Toast.LENGTH_SHORT).show();
-//                            txtPassword.setText(null);
-//                        } else if (TextUtils.isEmpty(txtEmail.getText().toString())) {
-//                            Toast.makeText(getApplicationContext(), "Please enter an email", Toast.LENGTH_SHORT).show();
-//                            txtPassword.setText(null);
-//                            txtConfirmPassword.setText(null);
-//                        } else if (!txtPassword.getText().toString().equals(txtConfirmPassword.getText().toString())) {
-//                            Toast.makeText(getApplicationContext(), "Passwords do not match", Toast.LENGTH_SHORT).show();
-//                            txtPassword.setText(null);
-//                            txtConfirmPassword.setText(null);
-//                        } else if (!EMAIL_ADDRESS_PATTERN.matcher(txtEmail.getText().toString().trim()).matches()) {
-//                            Toast.makeText(getApplicationContext(), "Invalid Email Address", Toast.LENGTH_SHORT).show();
-//                            txtPassword.setText(null);
-//                            txtConfirmPassword.setText(null);
-//                            txtEmail.setText(null);
-//                        }
-//
-//                        //do the Registration
-//                        else {
-//
-//
-//
-//
-//
-//                            //take inputs from the user and assign them to user object
-//                            user.setUserName(txtUserName.getText().toString().trim());
-//                            user.setRegNumber(txtRegNumber.getText().toString().trim());
-//                            user.setPassword(txtPassword.getText().toString().trim());
-//                            user.setEmail(txtEmail.getText().toString().trim());
-//                            user.setRole(roleSpinner.getSelectedItem().toString());
-//
-//                            dbRef.child(user.getUserName()).setValue(user);
+                        if (TextUtils.isEmpty(user.getUserName())){
+                            Toast.makeText(getApplicationContext(), "Please enter user name", Toast.LENGTH_SHORT).show();
+                        } else if (TextUtils.isEmpty(user.getRegNumber())) {
+                            Toast.makeText(getApplicationContext(), "Please enter Registration Number", Toast.LENGTH_SHORT).show();
+                        } else if (TextUtils.isEmpty(password)) {
+                            Toast.makeText(getApplicationContext(), "Please enter a password", Toast.LENGTH_SHORT).show();
+                        } else if (TextUtils.isEmpty(confirmPass)) {
+                            Toast.makeText(getApplicationContext(), "Please re-enter password", Toast.LENGTH_SHORT).show();
+                        } else if (TextUtils.isEmpty(user.getEmail())) {
+                            Toast.makeText(getApplicationContext(), "Please enter an email", Toast.LENGTH_SHORT).show();
+                        } else if (!password.equals(confirmPass)) {
+                            Toast.makeText(getApplicationContext(), "Passwords do not match", Toast.LENGTH_SHORT).show();
+                            txtPassword.setText(null);
+                            txtConfirmPassword.setText(null);
+                        }else if (!acceptRulesCheckBox.isChecked()){
+                            Toast.makeText(getApplicationContext(), "Please Accept Rules and Regulations", Toast.LENGTH_SHORT).show();
+                        }
+                        //do the Registration
+                        else {
+                            progressBar.setVisibility(View.VISIBLE);
 
-                            //Insert in to the database
-                            // dbRef.push().setValue(user);
-//                        String nextID = String.valueOf(childCount+1);
-//                        String finalID = null;
-//                        if(nextID.length()==1){
-//                            finalID = "U00"+nextID;
-//                        }
-//                        else if(nextID.length() == 2){
-//                            finalID = "U0"+nextID;
-//                        }
-//                        else if(nextID.length() == 3){
-//                            finalID = "U"+nextID;
-//                        }
+                            firebaseAuth.createUserWithEmailAndPassword(user.getEmail(),password).addOnCompleteListener
+                                    (new OnCompleteListener<AuthResult>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<AuthResult> task) {
 
+                                            if(task.isSuccessful()){
 
+                                                //Insert in to the database
+                                                dbRef.child(FirebaseAuth.getInstance().getCurrentUser()
+                                                        .getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                        Toast.makeText(getApplicationContext(),
+                                                                "Registration Complete", Toast.LENGTH_LONG).show();
 
+                                                        resetFields();
+                                                        progressBar.setVisibility(View.GONE);
+                                                        Intent i = new Intent(getApplicationContext(), UserLogin.class);
+                                                        startActivity(i);
+                                                    }
+                                                });
 
-                            resetFields();
+                                            } else {
+                                                Toast.makeText(getApplicationContext(),
+                                                        task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                            }
 
-//                        }
+                                        }
+                                    });
+
+                        }
 //                    }
 
 //                }catch (NumberFormatException e){
 //                    Toast.makeText(getApplicationContext(),"Invalid data !" , Toast.LENGTH_SHORT).show();
 //                }
 
-
-
-
-//                Intent i = new Intent(getApplicationContext(), LoginActivity.class);
-//                startActivity(i);
             }
         });
 
@@ -273,7 +236,7 @@ public class Register extends AppCompatActivity {
         signInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+                Intent i = new Intent(getApplicationContext(), UserLogin.class);
                 startActivity(i);
             }
         });

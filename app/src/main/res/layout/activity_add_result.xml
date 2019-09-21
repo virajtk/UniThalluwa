@@ -8,7 +8,7 @@
     tools:context=".Mark.AddResultActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/mainUIEmail"
         android:layout_width="220dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"

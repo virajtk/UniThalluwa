@@ -63,6 +63,7 @@
     <string name="search">Search</string>
     <string name="delete">Delete</string>
     <string name="report">Report</string>
+    <string name="AcceptRules"><![CDATA[Accept , Uni Thalluwa Rules & Regulations]]></string>
     <string-array name="roleItems">
         <item>Undergraduate</item>
         <item>Graduate</item>
