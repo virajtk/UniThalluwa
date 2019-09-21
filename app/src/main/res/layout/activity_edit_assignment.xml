@@ -4,19 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/editui1"
+    android:background="@drawable/lampbook"
     tools:context=".Assingment.EditAssignment">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="103dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="304dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/importbtn"
+        android:text="Search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.934"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="102dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="536dp"
+        android:background="@drawable/importbtn"
+        android:text="Update"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="102dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="540dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/importbtn"
+        android:text="Delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.862"
+        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_marginTop="15dp"
         android:background="@color/yellow"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:layout_width="match_parent"
@@ -26,6 +65,19 @@
             android:textColor="@color/pink"
             android:textSize="30dp" />
     </LinearLayout>
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="268dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="216dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/custom_text_editor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
@@ -44,19 +96,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.311" />
-
-    <SearchView
-        android:id="@+id/searchView"
-        android:layout_width="268dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="216dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/custom_text_editor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView9"
@@ -87,46 +126,6 @@
         app:layout_constraintHorizontal_bias="0.961"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="103dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="304dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/importbtn"
-        android:text="Search"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.934"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/addresultbtn"
-        android:layout_width="102dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="536dp"
-        android:background="@drawable/importbtn"
-        android:text="Update"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="102dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="540dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/importbtn"
-        android:text="Delete"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.936"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

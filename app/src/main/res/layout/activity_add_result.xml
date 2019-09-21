@@ -68,7 +68,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
-            android:id="@+id/spinner3"
+            android:id="@+id/yearSpinner"
             android:layout_width="206dp"
             android:layout_height="25dp"
             android:layout_marginStart="8dp"
@@ -84,7 +84,7 @@
             app:layout_constraintVertical_bias="0.059" />
 
         <Spinner
-            android:id="@+id/spinner4"
+            android:id="@+id/SemSpinner"
             android:layout_width="206dp"
             android:layout_height="25dp"
             android:layout_marginStart="8dp"

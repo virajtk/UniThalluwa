@@ -24,7 +24,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="Add Assignment"
-            android:textColor="@color/pink"
+            android:textColor="#19021D"
             android:textSize="32dp"
             android:textStyle="bold" />
 
@@ -32,8 +32,8 @@
 
     <EditText
         android:id="@+id/topic"
-        android:layout_width="287dp"
-        android:layout_height="37dp"
+        android:layout_width="313dp"
+        android:layout_height="43dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -48,43 +48,45 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintHorizontal_bias="0.585"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.567" />
+        app:layout_constraintVertical_bias="0.563" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="133dp"
-        android:layout_height="44dp"
+        android:layout_width="170dp"
+        android:layout_height="64dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/custom_secondry_button"
-        android:text="Save Changes"
+        android:text="Add"
 
 
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button4"
-        app:layout_constraintVertical_bias="0.268" />
+        app:layout_constraintVertical_bias="0.35" />
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="133dp"
-        android:layout_height="44dp"
+        android:layout_width="174dp"
+        android:layout_height="47dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/custom_primary_button"
-        android:text="Import"
+        android:text="Import Assignment"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.722" />
@@ -124,7 +126,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintHorizontal_bias="0.167"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.347" />
@@ -149,7 +151,7 @@
         app:layout_constraintVertical_bias="0.452" />
 
     <Spinner
-        android:id="@+id/spinner3"
+        android:id="@+id/yearSpinner"
         android:layout_width="161dp"
         android:layout_height="43dp"
         android:layout_marginStart="8dp"
@@ -165,7 +167,7 @@
         app:layout_constraintVertical_bias="0.23" />
 
     <Spinner
-        android:id="@+id/spinner4"
+        android:id="@+id/SemSpinner"
         android:layout_width="161dp"
         android:layout_height="43dp"
         android:layout_marginStart="8dp"
@@ -181,7 +183,7 @@
         app:layout_constraintVertical_bias="0.348" />
 
     <Spinner
-        android:id="@+id/spinner6"
+        android:id="@+id/ModuleSpinner"
         android:layout_width="161dp"
         android:layout_height="43dp"
         android:layout_marginStart="8dp"
