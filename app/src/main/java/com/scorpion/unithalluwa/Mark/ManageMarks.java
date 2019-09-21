@@ -18,12 +18,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.scorpion.unithalluwa.R;
+import com.scorpion.unithalluwa.data.model.Marks;
 
 public class ManageMarks extends AppCompatActivity {
     private Button reportbtn;
     private Button addbtn;
     private Button deletebtn;
     private Button updatebtn;
+    Marks marks;
+    FirebaseAuth firebaseAuth;
+    FirebaseUser firebaseUser;
 
     private EditText txtMark1,txtMark2,txtMark3,txtMark4,txtMark5;
     private DatabaseReference dbref;
@@ -36,11 +40,56 @@ public class ManageMarks extends AppCompatActivity {
 
         addbtn = findViewById(R.id.addbtn);
         reportbtn = findViewById(R.id.reportbtn);
+        updatebtn = findViewById(R.id.updateResultBtn);
+        deletebtn = findViewById(R.id.deletebtn);
         txtMark1 = findViewById(R.id.mark1);
         txtMark2 = findViewById(R.id.mark2);
         txtMark3 = findViewById(R.id.mark3);
         txtMark4 = findViewById(R.id.mark4);
         txtMark5 = findViewById(R.id.mark5);
+
+        marks = new Marks();
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
+
+        updatebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseReference updateRef = FirebaseDatabase.getInstance().getReference().child("Marks");
+                updateRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        if (dataSnapshot.hasChild(firebaseUser.getUid())){
+                            try {
+                                marks.setMark1(txtMark1.getText().toString().trim());
+                                marks.setMark2(txtMark2.getText().toString().trim());
+                                marks.setMark3(txtMark3.getText().toString().trim());
+                                marks.setMark4(txtMark4.getText().toString().trim());
+                                marks.setMark5(txtMark5.getText().toString().trim());
+                                //clearControls();
+                                dbref = FirebaseDatabase.getInstance().getReference().child("Marks").child(firebaseUser.getUid());
+                                dbref.setValue(marks);
+
+                                Toast.makeText(getApplicationContext(), "Marks Updated Successfully!", Toast.LENGTH_SHORT).show();
+
+                            }catch (Exception e){
+                                Toast.makeText(getApplicationContext(),"Invalied marks!",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        else {
+                            Toast.makeText(getApplicationContext(),"First enter your Marks", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+            }
+        });
 
         addbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +99,31 @@ public class ManageMarks extends AppCompatActivity {
             }
         });
 
+        deletebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseReference deleteref = FirebaseDatabase.getInstance().getReference().child("Marks");
+                deleteref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.hasChild(firebaseUser.getUid())){
+                            dbref =FirebaseDatabase.getInstance().getReference().child("Marks").child(firebaseUser.getUid());
+                            dbref.removeValue();
+                            clearControls();
+                            Toast.makeText(getApplicationContext(),"Marks deleted Successfully", Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            Toast.makeText(getApplicationContext(),"First enter your Marks",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+        });
 
         reportbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,5 +159,15 @@ public class ManageMarks extends AppCompatActivity {
         });
 
     }
+
+    public void clearControls(){
+
+        txtMark1.setText(null);
+        txtMark2.setText(null);
+        txtMark3.setText(null);
+        txtMark4.setText(null);
+        txtMark5.setText(null);
+    }
+
 
 }

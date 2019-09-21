@@ -43,7 +43,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <Button
-            android:id="@+id/addresultbtn"
+            android:id="@+id/updateResultBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -71,7 +71,7 @@
             android:text="@string/add"
             android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/updatebtn"
+            app:layout_constraintEnd_toStartOf="@+id/updateResultBtn"
             app:layout_constraintHorizontal_bias="0.535"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -88,7 +88,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.473"
-            app:layout_constraintStart_toEndOf="@+id/updatebtn"
+            app:layout_constraintStart_toEndOf="@+id/updateResultBtn"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.974" />
 
