@@ -2,22 +2,20 @@ package com.scorpion.unithalluwa.data.model;
 
 public class User {
 
-    String userID;
     String userName;
     String regNumber;
-    String password;
     String email;
     String role;
 
     public User() {
+
     }
 
-    public String getUserID() {
-        return userID;
-    }
-
-    public void setUserID(String userID) {
-        this.userID = userID;
+    public User(String userName, String regNumber, String email, String role) {
+        this.userName = userName;
+        this.regNumber = regNumber;
+        this.email = email;
+        this.role = role;
     }
 
     public String getUserName() {
@@ -34,14 +32,6 @@ public class User {
 
     public void setRegNumber(String regNumber) {
         this.regNumber = regNumber;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getEmail() {

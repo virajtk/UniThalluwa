@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "360329540330-g4vpupejjh9jp53qki7vnvqgjb28h2c4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.scorpion.unithalluwa",
+            "certificate_hash": "fc9ab69ee739bfa02bdb5e29a685e78c2901b8fd"
+          }
+        },
+        {
+          "client_id": "360329540330-gvi7hugakstentlj8el1s2rivdu56j7p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.scorpion.unithalluwa",
+            "certificate_hash": "9274d73b3fa648e2a4c3439af751c7a7310f2235"
+          }
+        },
+        {
           "client_id": "360329540330-t0i9gbpi045n37hj5m0lsm4pbmr1ctlc.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
