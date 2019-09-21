@@ -64,6 +64,9 @@
     <string name="delete">Delete</string>
     <string name="report">Report</string>
     <string name="AcceptRules"><![CDATA[Accept , Uni Thalluwa Rules & Regulations]]></string>
+    <string name="app_info">App Info</string>
+    <string name="edit">Edit</string>
+    <string name="cancel">Cancel</string>
     <string-array name="roleItems">
         <item>Undergraduate</item>
         <item>Graduate</item>
