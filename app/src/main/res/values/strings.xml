@@ -36,7 +36,6 @@
     <string name="ConfirmPassword">Confirm Password</string>
     <string name="email">E-mail</string>
     <string name="role">Role</string>
-    <string name="year">Year</string>
     <string name="semester">Semester</string>
     <string name="sem1">Semester 1</string>
     <string name="sem2">Semester 2</string>
@@ -48,6 +47,15 @@
     <string name="update">Update</string>
     <string name="title_activity_main_ui">Home</string>
     <string name="signout">Sign out</string>
+    <string name="past_papers">Past Papers</string>
+    <string name="papers">Papers</string>
+    <string name="PastPapers">Past Papers</string>
+    <string name="past_paper_year">Paper Year</string>
+    <string name="year_of_the_paper">Year of the paper</string>
+    <string name="checkSem2">2nd</string>
+    <string name="papersAndAnswers">Papers and Answers</string>
+    <string name="spm2019">SPM2019</string>
+    <string name="spm2018">SPM2018</string>
     <string name="reset">Reset</string>
     <string name="addcamarks">Add CA Marks</string>
     <string name="subject">Subject</string>
@@ -56,6 +64,11 @@
     <string name="submit">Submit</string>
     <string name="studentname">Student Name</string>
     <string name="camarks">CA Marks</string>
+    <string name="add">Add</string>
+    <string name="editPapers">Edit Papers</string>
+    <string name="module_name">Module Name</string>
+    <string name="search">Search</string>
+    <string name="delete">Delete</string>
 
     <string-array name="subjectList">
         <item>IP</item>

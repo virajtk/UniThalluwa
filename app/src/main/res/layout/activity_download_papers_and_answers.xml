@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pastpapersback2"
+    tools:context=".PastPapers_UI.download_papersAndAnswers">
+
+    <TextView
+        android:id="@+id/pprAndAsw"
+        android:layout_width="234dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/alegreya_sans_sc_bold"
+        android:text="@string/papersAndAnswers"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.028" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="290dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/custom_secondry_button"
+        android:text="@string/spm2019"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/pprAndAsw"
+        app:layout_constraintVertical_bias="0.197" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="155dp"
+        android:layout_height="75dp"
+        android:text="Button"
+        tools:layout_editor_absoluteX="125dp"
+        tools:layout_editor_absoluteY="299dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

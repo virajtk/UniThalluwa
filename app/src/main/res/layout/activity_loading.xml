@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/progress_bar"
         android:layout_centerHorizontal="true"
-        android:fontFamily="sans-serif-smallcaps"
+        android:fontFamily="@font/alegreya_sans_sc_bold"
         android:text="0 %"
         android:textColor="#fff"
         android:textSize="25sp" />
