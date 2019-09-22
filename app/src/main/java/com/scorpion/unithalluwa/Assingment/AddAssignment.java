@@ -26,6 +26,14 @@ public class AddAssignment extends AppCompatActivity {
     Button btnAdd;
     Assignment std;
 
+    private void clearContrals(){
+
+        spinner1.setSelection(0);
+        spinner2.setSelection(0);
+        spinner3.setSelection(0);
+        etTopic.setText("");
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,8 +95,8 @@ public class AddAssignment extends AppCompatActivity {
 
                         dbref.push().setValue(std);
 
-                        Toast.makeText(getApplicationContext(), " Assignment Add successfully    ",Toast.LENGTH_SHORT).show();
-                      //  clearContrals();
+                        Toast.makeText(getApplicationContext(), " New Assignment Add successfully    ",Toast.LENGTH_SHORT).show();
+                        clearContrals();
                     }
 
                 }

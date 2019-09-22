@@ -9,9 +9,11 @@
         android:roundIcon="@drawable/unithalluwalogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Mark.ManageMarks"></activity>
-        <activity android:name=".User_UI.UserLogin"
-            android:screenOrientation="portrait"/>
+        <activity android:name=".Assingment.userAssignment"></activity>
+        <activity android:name=".Mark.ManageMarks" />
+        <activity
+            android:name=".User_UI.UserLogin"
+            android:screenOrientation="portrait" />
         <activity android:name=".PastPapers_UI.editPastPapers" />
         <activity android:name=".PastPapers_UI.download_papersAndAnswers" />
         <activity android:name=".PastPapers_UI.selectPastPapers" />
@@ -30,8 +32,8 @@
             android:name=".Main.MainUI"
             android:label="@string/title_activity_main_ui"
             android:parentActivityName=".User_UI.profile"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.scorpion.unithalluwa.User_UI.profile" />
