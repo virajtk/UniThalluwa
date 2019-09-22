@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "360329540330-hvtl0m73eu4djk6ku36i54t3h2htro6a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.scorpion.unithalluwa",
+            "certificate_hash": "4799526f6e2d8031d30bc471352efc09237d751c"
+          }
+        },
+        {
           "client_id": "360329540330-g4vpupejjh9jp53qki7vnvqgjb28h2c4.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

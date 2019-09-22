@@ -79,11 +79,11 @@ public class AddResultActivity extends AppCompatActivity implements AdapterView.
         });
 
 
-        Spinner spinner = findViewById(R.id.spinner3);
+       // Spinner spinner = findViewById(R.id.spinner3);
         // ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.year, android.R.layout.simple_spinner_item);
         //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
+      //  spinner.setOnItemSelectedListener(this);
 
 
         addresultbtn = findViewById(R.id.addresultbtn);
