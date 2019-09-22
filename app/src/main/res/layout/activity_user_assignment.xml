@@ -5,54 +5,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/lampbook"
-    tools:context=".Assingment.RetriveAssignment">
+    tools:context=".Assingment.userAssignment">
 
     <LinearLayout
+        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="16dp"
         android:background="@color/yellow"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="My Assignments"
+            android:text="  Assignments"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="32dp"
             android:textStyle="bold" />
-
     </LinearLayout>
 
-
-    <Button
-        android:id="@+id/AddNewAsBtn"
-
-        android:layout_width="133dp"
-        android:layout_height="44dp"
-        android:background="@drawable/custom_primary_button"
-        android:text="Add Assignment"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.943" />
-
     <LinearLayout
-        android:layout_width="349dp"
-        android:layout_height="471dp"
+        android:id="@+id/linearLayout3"
+        android:layout_width="382dp"
+        android:layout_height="472dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></LinearLayout>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498"></LinearLayout>
 
+    <Button
+        android:id="@+id/MyAsBtn"
+        android:layout_width="149dp"
+        android:layout_height="42dp"
+        android:background="@drawable/custom_primary_button"
+        android:text="My Assignment"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.881"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.949" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+
