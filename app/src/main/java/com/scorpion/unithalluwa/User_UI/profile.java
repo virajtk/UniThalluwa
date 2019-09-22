@@ -28,7 +28,7 @@ import com.scorpion.unithalluwa.data.model.User;
 public class profile extends AppCompatActivity {
 
     EditText profileUsername, profileEmail, profileRegNo, profileRole;
-    Button logoutBtn, updateBtn,deleteUserBtn,editBtn,cancelBtn;
+    Button updateBtn,deleteUserBtn,editBtn,cancelBtn,changePassBtn;
     ProgressBar progressBar;
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
@@ -50,7 +50,6 @@ public class profile extends AppCompatActivity {
 
         progressBar = findViewById(R.id.ProfileProgressBar);
 
-        logoutBtn = findViewById(R.id.removeBtn);
         editBtn = findViewById(R.id.editBtn);
         cancelBtn = findViewById(R.id.cancelBtn);
         updateBtn = findViewById(R.id.updateButton);
