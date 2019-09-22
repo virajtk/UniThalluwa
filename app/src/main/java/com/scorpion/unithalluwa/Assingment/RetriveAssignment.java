@@ -24,26 +24,26 @@ public class RetriveAssignment extends AppCompatActivity {
 
         //assign it to what we want
         addBtn = findViewById(R.id.AddNewAsBtn);
-        spinner1 = findViewById(R.id.spinner5);
+      //  spinner1 = findViewById(R.id.spinner5);
 
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(RetriveAssignment.this,
                 android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.year));
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner1.setAdapter(myAdapter);
 
-        Spinner spinner2 = findViewById(R.id.spinner2);
+     //   Spinner spinner2 = findViewById(R.id.spinner2);
 
         ArrayAdapter<String> myAdapter1 = new ArrayAdapter<String>(RetriveAssignment.this,
                 android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.semester));
         myAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner2.setAdapter(myAdapter1);
+     //   spinner2.setAdapter(myAdapter1);
 
-        Spinner spinner3 = findViewById(R.id.spinner);
+       // Spinner spinner3 = findViewById(R.id.spinner);
 
         ArrayAdapter<String> myAdapter2 = new ArrayAdapter<String>(RetriveAssignment.this,
                 android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.module));
         myAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner3.setAdapter(myAdapter2);
+     //   spinner3.setAdapter(myAdapter2);
 
         //click event
         addBtn.setOnClickListener(new View.OnClickListener() {
