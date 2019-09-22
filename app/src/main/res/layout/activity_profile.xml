@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/userProfile"
-        android:layout_width="326dp"
-        android:layout_height="71dp"
+        android:layout_width="268dp"
+        android:layout_height="59dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -20,14 +20,14 @@
         android:textAlignment="viewStart"
         android:textColor="#000000"
         android:textSize="36sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.376"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.051"
-        tools:ignore="MissingConstraints"
-        />
+        tools:ignore="MissingConstraints" />
 
     <LinearLayout
         android:layout_width="208dp"
@@ -45,7 +45,7 @@
         app:layout_constraintVertical_bias="0.67">
 
         <EditText
-            android:id="@+id/etUsername"
+            android:id="@+id/etUserName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -55,7 +55,6 @@
             android:enabled="false"
             android:inputType="textPersonName"
             android:paddingLeft="10dp"
-            android:text="Viraj"
             android:textAllCaps="true"
             android:textColor="#1B1A19"
             android:textSize="18sp" />
@@ -71,13 +70,12 @@
             android:enabled="false"
             android:inputType="textPersonName"
             android:paddingLeft="10dp"
-            android:text="it18145526@my.sliit.lk"
             android:textAllCaps="true"
             android:textColor="#1B1A19"
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/etRegNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -87,13 +85,12 @@
             android:enabled="false"
             android:inputType="textPersonName"
             android:paddingLeft="10dp"
-            android:text="IT18145526"
             android:textAllCaps="true"
             android:textColor="#1B1A19"
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/role"
+            android:id="@+id/etRole"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -103,11 +100,9 @@
             android:enabled="false"
             android:inputType="textPersonName"
             android:paddingLeft="10dp"
-            android:text="Undergratuate"
             android:textAllCaps="true"
             android:textColor="#1B1A19"
-            android:textSize="18sp"
-            tools:text="Undergratuate" />
+            android:textSize="18sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -177,7 +172,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/update"
+        android:id="@+id/updateButton"
         android:layout_width="121dp"
         android:layout_height="49dp"
         android:layout_marginStart="8dp"
@@ -194,41 +189,41 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.917" />
+        app:layout_constraintVertical_bias="0.876" />
 
     <ImageView
         android:id="@+id/profilePicture"
-        android:layout_width="102dp"
-        android:layout_height="110dp"
+        android:layout_width="137dp"
+        android:layout_height="137dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:longClickable="true"
-        android:src="@drawable/adee"
+        android:src="@drawable/usericon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.203" />
+        app:layout_constraintVertical_bias="0.216"
+        app:srcCompat="@drawable/usericon" />
 
     <Button
-        android:id="@+id/logout"
+        android:id="@+id/removeBtn"
         android:layout_width="112dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/custom_remove_button"
-        android:text="Logout"
+        android:text="Remove"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.968"
+        app:layout_constraintHorizontal_bias="0.939"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.918" />
+        app:layout_constraintVertical_bias="0.873" />
 
     <Button
         android:id="@+id/chpassword"
@@ -243,9 +238,47 @@
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.028"
+        app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.918" />
+        app:layout_constraintVertical_bias="0.873" />
+
+    <Button
+        android:id="@+id/editBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+        android:text="@string/edit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.325" />
+
+    <Button
+        android:id="@+id/cancelBtn"
+        android:layout_width="86dp"
+        android:layout_height="48dp"
+        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+        android:text="@string/cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.945" />
+
+    <ProgressBar
+        android:id="@+id/ProfileProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

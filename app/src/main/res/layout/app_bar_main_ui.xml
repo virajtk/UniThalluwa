@@ -15,14 +15,14 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#FF9800"
+            android:background="#AF4C02"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <include
         layout="@layout/content_main_ui"
-        android:background="#FF5722" />
+        android:background="#FFAB00" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:backgroundTint="#FF5722"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        app:backgroundTint="#0091EA"
+        app:srcCompat="@drawable/male" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

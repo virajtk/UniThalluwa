@@ -17,15 +17,8 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string-array name="roleItems">
-        <item>Undergraduate</item>
-        <item>Graduate</item>
-        <item>Lecturer</item>
-        <item>Assistant Lecturer</item>
-        <item>Lab Assistant</item>
-    </string-array>
-
     <string name="menu_home">Home</string>
+
     <string name="menu_Mark">Marks</string>
     <string name="menu_markingSchema">Marking Schema</string>
     <string name="menu_assignment">Assignments</string>
@@ -69,6 +62,18 @@
     <string name="module_name">Module Name</string>
     <string name="search">Search</string>
     <string name="delete">Delete</string>
+    <string name="report">Report</string>
+    <string name="AcceptRules"><![CDATA[Accept , Uni Thalluwa Rules & Regulations]]></string>
+    <string name="app_info">App Info</string>
+    <string name="edit">Edit</string>
+    <string name="cancel">Cancel</string>
+    <string-array name="roleItems">
+        <item>Undergraduate</item>
+        <item>Graduate</item>
+        <item>Lecturer</item>
+        <item>Assistant Lecturer</item>
+        <item>Lab Assistant</item>
+    </string-array>
 
     <string-array name="subjectList">
         <item>IP</item>
