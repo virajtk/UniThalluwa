@@ -10,17 +10,17 @@ import android.widget.ImageView;
 import com.scorpion.unithalluwa.Main.MainUI;
 import com.scorpion.unithalluwa.R;
 
-public class gpa extends AppCompatActivity {
+public class Info extends AppCompatActivity {
 
     ImageView home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gpa);
+        setContentView(R.layout.activity_info);
 
+        home = findViewById(R.id.imageView13);
 
-        home = findViewById(R.id.imageView7);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

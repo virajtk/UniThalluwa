@@ -21,6 +21,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.scorpion.unithalluwa.About.Info;
 import com.scorpion.unithalluwa.About.gpa;
 import com.scorpion.unithalluwa.About.rules;
 import com.scorpion.unithalluwa.Assingment.AddAssignment;
@@ -152,8 +153,8 @@ public class MainUI extends AppCompatActivity
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
         } else if (id == R.id.action_AppInfo) {
-            //Intent i = new Intent(getApplicationContext(), Info.class);
-            //startActivity(i);
+            Intent i = new Intent(getApplicationContext(), Info.class);
+            startActivity(i);
         }
 
         return super.onOptionsItemSelected(item);

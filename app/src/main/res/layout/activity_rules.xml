@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/alegreya_sans_sc_bold"
         android:text="@string/menu_req"
         android:textColor="#FFFFFF"
@@ -32,14 +32,7 @@
         android:id="@+id/imageView8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/reqments1"
-        android:layout_marginTop="-20dp"/>
-
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/requir2"
-        android:layout_marginTop="-55dp"/>
+        android:layout_marginTop="30dp"
+        app:srcCompat="@drawable/reqments1" />
 
 </LinearLayout>
