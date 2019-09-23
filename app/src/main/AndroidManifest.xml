@@ -9,7 +9,8 @@
         android:roundIcon="@drawable/unithalluwalogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".About.Info"></activity>
+        <activity android:name=".Main.ManageNotices"></activity>
+        <activity android:name=".About.Info" />
         <activity android:name=".About.rules" />
         <activity android:name=".About.gpa" />
         <activity android:name=".User_UI.ChangePassword" />

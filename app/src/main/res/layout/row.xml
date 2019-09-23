@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    app:cardBackgroundColor="#000091EA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="@drawable/custom_card"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/listTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Title"
+            android:textAlignment="center"
+            android:textColor="#5F0000"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/listMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="serif"
+            android:text="Message"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/listSender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="12dp"
+            android:text="Sender"
+            android:textAlignment="viewEnd"
+            android:textColor="#424242"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
