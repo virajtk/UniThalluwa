@@ -188,6 +188,7 @@ public class Register extends AppCompatActivity {
                                     (new OnCompleteListener<AuthResult>() {
                                         @Override
                                         public void onComplete(@NonNull Task<AuthResult> task) {
+                                            progressBar.setVisibility(View.GONE);
 
                                             if(task.isSuccessful()){
 
@@ -200,7 +201,7 @@ public class Register extends AppCompatActivity {
                                                                 "Registration Complete", Toast.LENGTH_LONG).show();
 
                                                         resetFields();
-                                                        progressBar.setVisibility(View.GONE);
+
                                                         Intent i = new Intent(getApplicationContext(), UserLogin.class);
                                                         startActivity(i);
                                                     }

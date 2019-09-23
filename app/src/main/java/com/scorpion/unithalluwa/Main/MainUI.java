@@ -23,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.scorpion.unithalluwa.Assingment.AddAssignment;
 import com.scorpion.unithalluwa.Assingment.RetriveAssignment;
+import com.scorpion.unithalluwa.Assingment.userAssignment;
 import com.scorpion.unithalluwa.Mark.AddCAMarks;
 import com.scorpion.unithalluwa.Mark.ManageMarks;
 import com.scorpion.unithalluwa.PastPapers_UI.viewPastPapers;
@@ -172,7 +173,7 @@ public class MainUI extends AppCompatActivity
             Intent i = new Intent(getApplicationContext(), viewPastPapers.class);
             startActivity(i);
         } else if (id == R.id.nav_assignment) {
-            Intent i = new Intent(getApplicationContext(), RetriveAssignment.class);
+            Intent i = new Intent(getApplicationContext(), userAssignment.class);
             startActivity(i);
         } else if (id == R.id.nav_GPA) {
             //Intent i = new Intent(getApplicationContext(),#.class);
