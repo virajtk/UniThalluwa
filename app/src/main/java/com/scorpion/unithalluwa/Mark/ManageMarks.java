@@ -48,6 +48,7 @@ public class ManageMarks extends AppCompatActivity {
         txtMark4 = findViewById(R.id.mark4);
         txtMark5 = findViewById(R.id.mark5);
 
+
         marks = new Marks();
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
