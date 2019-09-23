@@ -129,6 +129,11 @@ public class ManageMarks extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),ReportActivity.class);
+                i.putExtra("mark1",txtMark1.toString().trim());
+                i.putExtra("mark2",txtMark2.toString().trim());
+                i.putExtra("mark3",txtMark3.toString().trim());
+                i.putExtra("mark4",txtMark4.toString().trim());
+                i.putExtra("mark5",txtMark5.toString().trim());
                 startActivity(i);
             }
         });

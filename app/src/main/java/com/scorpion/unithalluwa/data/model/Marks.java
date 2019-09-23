@@ -7,6 +7,15 @@ public class Marks {
     private String mark3;
     private String mark4;
     private String mark5;
+    private Integer gpa;
+
+    public Integer getGpa() {
+        return gpa;
+    }
+
+    public void setGpa(Integer gpa) {
+        this.gpa = gpa;
+    }
 
     public Marks() {
     }
