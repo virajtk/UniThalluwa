@@ -114,10 +114,10 @@ public class ManageMarks extends AppCompatActivity {
                             dbref =FirebaseDatabase.getInstance().getReference().child("Marks").child(firebaseUser.getUid());
                             dbref.removeValue();
                             clearControls();
-                            Toast.makeText(getApplicationContext(),"Marks deleted Successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),"Marks deleted successfully!", Toast.LENGTH_SHORT).show();
                         }
                         else {
-                            Toast.makeText(getApplicationContext(),"First enter your Marks",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),"First add your Marks!",Toast.LENGTH_SHORT).show();
                         }
                     }
 

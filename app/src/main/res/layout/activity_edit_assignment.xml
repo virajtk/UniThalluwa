@@ -60,7 +60,7 @@
     </LinearLayout>
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/txtTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -70,7 +70,7 @@
         tools:layout_editor_absoluteY="137dp" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/txtModule"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -80,7 +80,7 @@
         tools:layout_editor_absoluteY="233dp" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/txtSem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -90,7 +90,7 @@
         tools:layout_editor_absoluteY="331dp" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/txtYear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
