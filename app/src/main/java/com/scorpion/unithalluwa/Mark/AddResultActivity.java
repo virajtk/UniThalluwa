@@ -56,19 +56,19 @@ public class AddResultActivity extends AppCompatActivity implements AdapterView.
                         Toast.makeText(getApplicationContext(), "Please Enter Marks For EAP", Toast.LENGTH_SHORT).show();
                     else if (TextUtils.isEmpty(txtMark5.getText().toString()))
                         Toast.makeText(getApplicationContext(), "Please Enter Marks For OOC", Toast.LENGTH_SHORT).show();
-                    else if (txtMark1.getText().toString().length() > 2 | txtMark1.getText().toString().matches("^[A-Z + -]*$")){
+                    else if (txtMark1.getText().toString().length() > 2 /*|txtMark1.getText().toString().matches("^[A-Z + -]*$")*/){
                         Toast.makeText(getApplicationContext(), "Please Enter valid Marks For IWT", Toast.LENGTH_SHORT).show();
                     }
-                    else if (txtMark2.getText().toString().length() > 2 | txtMark2.getText().toString().matches("^[A-Z+ ]*$")){
+                    else if (txtMark2.getText().toString().length() > 2 /*| txtMark2.getText().toString().matches("^[A-Z+ ]*$")*/){
                         Toast.makeText(getApplicationContext(), "Please Enter valid Marks For SPM", Toast.LENGTH_SHORT).show();
                     }
-                    else if (txtMark3.getText().toString().length() > 2 | txtMark3.getText().toString().matches("^[A-Z+ ]*$")){
+                    else if (txtMark3.getText().toString().length() > 2 /*| txtMark3.getText().toString().matches("^[A-Z+ ]*$")*/){
                         Toast.makeText(getApplicationContext(), "Please Enter valid Marks For ISDM", Toast.LENGTH_SHORT).show();
                     }
-                    else if (txtMark4.getText().toString().length() > 2 | txtMark4.getText().toString().matches("^[A-Z+ ]*$")){
+                    else if (txtMark4.getText().toString().length() > 2 /*| txtMark4.getText().toString().matches("^[A-Z+ ]*$")*/){
                         Toast.makeText(getApplicationContext(), "Please Enter valid Marks For EAP", Toast.LENGTH_SHORT).show();
                     }
-                    else if (txtMark5.getText().toString().length() > 2 | txtMark5.getText().toString().matches("^[A-Z+ ]*$")){
+                    else if (txtMark5.getText().toString().length() > 2 /*| txtMark5.getText().toString().matches("^[A-Z+ ]*$")*/){
                         Toast.makeText(getApplicationContext(), "Please Enter valid Marks For OOC", Toast.LENGTH_SHORT).show();
                     }
                     else {

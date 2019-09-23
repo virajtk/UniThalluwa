@@ -36,6 +36,7 @@
         <activity android:name=".Assingment.RetriveAssignment" />
         <activity android:name=".Assingment.EditAssignment" />
         <activity android:name=".Assingment.AddAssignment" />
+        <activity android:name=".Assingment.userAssignment" />
         <activity
             android:name=".Main.MainUI"
             android:label="@string/title_activity_main_ui"

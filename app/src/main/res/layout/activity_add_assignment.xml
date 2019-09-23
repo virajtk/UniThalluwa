@@ -43,7 +43,7 @@
         android:gravity="center"
         android:hint="Topic"
         android:inputType="textPersonName"
-        android:textColor="@android:color/background_light"
+        android:textColor="#000000"
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -58,7 +58,6 @@
         android:layout_width="170dp"
         android:layout_height="64dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="76dp"
         android:background="@drawable/custom_secondry_button"
@@ -70,7 +69,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.546"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4"
+        app:layout_constraintTop_toBottomOf="@+id/importAssbtn"
         app:layout_constraintVertical_bias="0.35" />
 
     <Button

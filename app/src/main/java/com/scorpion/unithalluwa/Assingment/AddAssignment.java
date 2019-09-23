@@ -26,8 +26,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -63,9 +68,9 @@ public class AddAssignment extends AppCompatActivity {
 
         assignment = new Assignment();
         spinner1 = findViewById(R.id.yearSpinner);
-
+        spinner2 = findViewById(R.id.SemSpinner);
+        spinner3 = findViewById(R.id.ModuleSpinner);
         etTopic = findViewById(R.id.topic);
-
         btnAdd = findViewById(R.id.addBtn);
         importAssbtn =findViewById(R.id.importAssbtn);
 
@@ -84,15 +89,12 @@ public class AddAssignment extends AppCompatActivity {
             }
         });
 
+
+
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                spinner1 = findViewById(R.id.yearSpinner);
-                spinner2 = findViewById(R.id.SemSpinner);
-                spinner3 = findViewById(R.id.ModuleSpinner);
-                etTopic = findViewById(R.id.topic);
-                btnAdd = findViewById(R.id.addBtn);
 
                 dbref = FirebaseDatabase.getInstance().getReference().child("Assignment");
 
@@ -119,8 +121,14 @@ public class AddAssignment extends AppCompatActivity {
                         assignment.setModule(spinner3.getSelectedItem().toString().trim());
                         assignment.setAssTitle(etTopic.getText().toString().trim());
 
+                        //dbref.push().setValue(marks);
+                        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+                        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
 
-                        dbref.push().setValue(assignment);
+
+                        dbref = FirebaseDatabase.getInstance().getReference().child("Assignment");
+                        dbref.child(firebaseUser.getUid()).child(assignment.getAssTitle()).setValue(assignment);
+                        //dbref.push().setValue(assignment);
 
                         Toast.makeText(getApplicationContext(), " New Assignment Add successfully    ",Toast.LENGTH_SHORT).show();
                         clearContrals();

@@ -43,7 +43,6 @@ public class ReportActivity extends AppCompatActivity {
         String mark5  = i.getStringExtra("mark5");
 
         answer = (calGpa(mark1) + calGpa(mark2) + calGpa(mark3) + calGpa(mark4) + calGpa(mark5))/5;
-        Toast.makeText(getApplicationContext(), Double.toString(calGpa(mark1)), Toast.LENGTH_LONG).show();
         gpa.setText(Double.toString(answer));
 
 

@@ -97,7 +97,7 @@ public class MainUI extends AppCompatActivity
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(MainUI.this,ManageMarks.class);
+                        Intent intent = new Intent(MainUI.this,ManageNotices.class);
                         intent.putExtra("title",model.getTitle());
                         intent.putExtra("message",model.getMessage());
                         intent.putExtra("sender",model.getMessage());

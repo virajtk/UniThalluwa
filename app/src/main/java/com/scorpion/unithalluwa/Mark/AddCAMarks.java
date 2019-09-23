@@ -27,7 +27,7 @@ public class AddCAMarks extends AppCompatActivity implements AdapterView.OnItemS
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
-        button4 = (Button) findViewById(R.id.button4);
+        button4 = (Button) findViewById(R.id.importAssbtn);
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view1) {
