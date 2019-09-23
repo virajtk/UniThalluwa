@@ -54,6 +54,7 @@ public class profile extends AppCompatActivity {
         cancelBtn = findViewById(R.id.cancelBtn);
         updateBtn = findViewById(R.id.updateButton);
         deleteUserBtn = findViewById(R.id.removeBtn);
+        changePassBtn = findViewById(R.id.chpassword);
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
@@ -190,5 +191,14 @@ public class profile extends AppCompatActivity {
 
             }
         });
+
+        changePassBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),ChangePassword.class);
+                startActivity(i);
+            }
+        });
+
     }
 }

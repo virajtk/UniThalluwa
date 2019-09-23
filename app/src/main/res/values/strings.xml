@@ -71,6 +71,8 @@
     <string name="change">Change</string>
     <string name="old_pass">Old Password</string>
     <string name="new_password">New Password</string>
+    <string name="deactivate">Deactivate</string>
+    <string name="forgot_password">Forgot Password? Recover</string>
     <string-array name="roleItems">
         <item>Undergraduate</item>
         <item>Graduate</item>

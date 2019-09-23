@@ -204,6 +204,7 @@ public class Register extends AppCompatActivity {
 
                                                         Intent i = new Intent(getApplicationContext(), UserLogin.class);
                                                         startActivity(i);
+                                                        finish();
                                                     }
                                                 });
 
