@@ -22,6 +22,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.scorpion.unithalluwa.About.gpa;
+import com.scorpion.unithalluwa.About.rules;
 import com.scorpion.unithalluwa.Assingment.AddAssignment;
 import com.scorpion.unithalluwa.Assingment.RetriveAssignment;
 import com.scorpion.unithalluwa.Assingment.userAssignment;
@@ -180,8 +181,8 @@ public class MainUI extends AppCompatActivity
             Intent i = new Intent(getApplicationContext(), gpa.class);
             startActivity(i);
         } else if (id == R.id.nav_req) {
-            //Intent i = new Intent(getApplicationContext(),#.class);
-            //startActivity(i);
+            Intent i = new Intent(getApplicationContext(), rules.class);
+            startActivity(i);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
