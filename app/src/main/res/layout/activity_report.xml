@@ -17,17 +17,17 @@
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/alegreya_sans_sc_bold"
         android:text="Report"
-        android:textAlignment="viewStart"
+        android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="#000000"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.073" />
+        app:layout_constraintVertical_bias="0.072" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frameLayout2"
@@ -57,6 +57,7 @@
             android:text="@string/studentname"
             android:textAlignment="viewStart"
             android:textAllCaps="true"
+            android:textColor="#000000"
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -78,6 +79,7 @@
             android:text="@string/regNoShort"
             android:textAlignment="viewStart"
             android:textAllCaps="true"
+            android:textColor="#000000"
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
