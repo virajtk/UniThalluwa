@@ -2,9 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.scorpion.unithalluwa">
 
-
-    <uses-permission android:name="android.permission.INTERNET"/>
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/unithalluwalogo"
@@ -12,7 +9,8 @@
         android:roundIcon="@drawable/unithalluwalogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".User_UI.ChangePassword"></activity>
+        <activity android:name=".About.gpa"></activity>
+        <activity android:name=".User_UI.ChangePassword" />
         <activity android:name=".Mark.ManageMarks" />
         <activity
             android:name=".User_UI.UserLogin"
@@ -52,5 +50,7 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

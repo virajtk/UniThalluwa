@@ -22,8 +22,8 @@
     <string name="menu_Mark">Marks</string>
     <string name="menu_markingSchema">Marking Schema</string>
     <string name="menu_assignment">Assignments</string>
-    <string name="menu_aboutgpa">GPA</string>
-    <string name="menu_req">Requirements</string>
+    <string name="menu_aboutgpa">GPA Schema</string>
+    <string name="menu_req">Degree Requirements</string>
     <string name="registation">Registration</string>
     <string name="registaionNumber">Registration Number</string>
     <string name="ConfirmPassword">Confirm Password</string>
