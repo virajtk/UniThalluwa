@@ -26,7 +26,7 @@
         app:layout_constraintVertical_bias="0.075" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textViewUserName"
         android:layout_width="160dp"
         android:layout_height="32dp"
         android:layout_marginStart="8dp"
