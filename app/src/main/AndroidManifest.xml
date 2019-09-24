@@ -22,10 +22,6 @@
         <activity
             android:name=".User_UI.UserLogin"
             android:screenOrientation="portrait" />
-        <activity android:name=".Mark.ManageMarks" />
-        <activity
-            android:name=".User_UI.UserLogin"
-            android:screenOrientation="portrait" />
         <activity android:name=".PastPapers_UI.editPastPapers" />
         <activity android:name=".PastPapers_UI.download_papersAndAnswers" />
         <activity android:name=".PastPapers_UI.selectPastPapers" />

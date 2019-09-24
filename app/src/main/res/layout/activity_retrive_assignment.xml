@@ -30,9 +30,9 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="416dp"
+        android:layout_marginTop="50dp"
         android:orientation="vertical">
 
         <androidx.recyclerview.widget.RecyclerView
