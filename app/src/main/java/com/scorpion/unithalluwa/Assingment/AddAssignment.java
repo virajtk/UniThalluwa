@@ -132,6 +132,10 @@ public class AddAssignment extends AppCompatActivity {
 
                         Toast.makeText(getApplicationContext(), " New Assignment Add successfully    ",Toast.LENGTH_SHORT).show();
                         clearContrals();
+
+                        Intent i = new Intent(getApplicationContext(),RetriveAssignment.class);
+                        startActivity(i);
+                        finish();
                     }
 
                 }

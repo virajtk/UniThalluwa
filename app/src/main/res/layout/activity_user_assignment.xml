@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/lampbook"
+    android:orientation="vertical"
     tools:context=".Assingment.userAssignment">
 
     <LinearLayout
@@ -13,12 +14,7 @@
         android:layout_height="80dp"
         android:layout_marginTop="16dp"
         android:background="@color/yellow"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
@@ -32,16 +28,19 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="382dp"
+        android:id="@+id/contentUserAss"
+        android:layout_width="match_parent"
         android:layout_height="472dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498"></LinearLayout>
+        android:orientation="horizontal">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerviewUserAss"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/MyAsBtn"
@@ -49,12 +48,9 @@
         android:layout_height="42dp"
         android:background="@drawable/custom_primary_button"
         android:text="My Assignment"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.881"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.949" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/white" />
+
+</LinearLayout>
 

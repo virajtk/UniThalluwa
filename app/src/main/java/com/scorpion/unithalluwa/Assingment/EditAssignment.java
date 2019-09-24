@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,6 +35,11 @@ public class EditAssignment extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
+        txtModule = findViewById(R.id.txtModule);
+        txtSem = findViewById(R.id.txtSem);
+        txtYear = findViewById(R.id.txtYear);
+        txtTitle = findViewById(R.id.txtTitle);
+
         editAssBtn = findViewById(R.id.editAssBtn);
         deleteAssBtn = findViewById(R.id.deletebtn);
 
@@ -41,12 +47,31 @@ public class EditAssignment extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
 
+        String assTitle = getIntent().getStringExtra("assTitle");
+        String year = getIntent().getStringExtra("year");
+        String sem = getIntent().getStringExtra("sem");
+        String module = getIntent().getStringExtra("module");
+
+        Toast.makeText(this, ""+assTitle, Toast.LENGTH_SHORT).show();
+
+        assignment.setAssTitle(assTitle);
+        assignment.setYear(year);
+        assignment.setSem(sem);
+        assignment.setModule(module);
+
+        txtTitle.setText(assignment.getAssTitle());
+        txtYear.setText(assignment.getYear());
+        txtSem.setText(assignment.getSem());
+        txtModule.setText(assignment.getModule());
 
         //update code!
         editAssBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatabaseReference updateReference = FirebaseDatabase.getInstance().getReference().child("Assignment");
+                firebaseAuth = FirebaseAuth.getInstance();
+                firebaseUser = firebaseAuth.getCurrentUser();
+
+                DatabaseReference updateReference = FirebaseDatabase.getInstance().getReference().child("Assignment").child(firebaseUser.getUid());
                 updateReference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

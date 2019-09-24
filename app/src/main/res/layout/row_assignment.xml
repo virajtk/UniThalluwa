@@ -13,37 +13,35 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/listTitle"
+            android:id="@+id/listAssTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:text="Title"
             android:textAlignment="center"
-            android:textColor="#2C0000"
-            android:textSize="20dp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/listMessage"
+            android:id="@+id/listAssYear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:fontFamily="serif"
-            android:text="Message"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="15dp" />
+            android:text="Year"
+            android:textAlignment="center" />
 
         <TextView
-            android:id="@+id/listSender"
+            android:id="@+id/listAssSem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/semester"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/listAssModule"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:layout_marginRight="12dp"
-            android:text="Sender"
-            android:textAlignment="viewEnd"
-            android:textColor="#424242"
-            android:textSize="18sp" />
+            android:text="Module"
+            android:textAlignment="center" />
 
 
     </LinearLayout>
