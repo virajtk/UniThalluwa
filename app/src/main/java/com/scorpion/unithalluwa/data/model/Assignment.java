@@ -10,6 +10,14 @@ public class Assignment {
     public Assignment() {
     }
 
+    public Assignment(String assTitle, String year, String sem, String module, String assURL) {
+        this.assTitle = assTitle;
+        this.year = year;
+        this.sem = sem;
+        this.module = module;
+        this.assURL = assURL;
+    }
+
     public String getAssTitle() {
         return assTitle;
     }

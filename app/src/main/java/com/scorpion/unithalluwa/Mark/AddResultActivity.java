@@ -21,7 +21,7 @@ import com.scorpion.unithalluwa.data.model.Marks;
 
 public class AddResultActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
-    private EditText txtMark1,txtMark2,txtMark3,txtMark4,txtMark5;
+    protected EditText txtMark1,txtMark2,txtMark3,txtMark4,txtMark5;
     private DatabaseReference dbref;
     Marks marks;
     private Button addresultbtn;
@@ -47,15 +47,30 @@ public class AddResultActivity extends AppCompatActivity implements AdapterView.
                 dbref = FirebaseDatabase.getInstance().getReference().child("Marks");
                 try {
                     if (TextUtils.isEmpty(txtMark1.getText().toString()))
-                        Toast.makeText(getApplicationContext(), "Please Enter Marks For sub1", Toast.LENGTH_SHORT).show();
-                    else if (TextUtils.isEmpty(txtMark1.getText().toString()))
-                        Toast.makeText(getApplicationContext(), "Please Enter Marks For sub2", Toast.LENGTH_SHORT).show();
-                    else if (TextUtils.isEmpty(txtMark1.getText().toString()))
-                        Toast.makeText(getApplicationContext(), "Please Enter Marks For sub3", Toast.LENGTH_SHORT).show();
-                    else if (TextUtils.isEmpty(txtMark1.getText().toString()))
-                        Toast.makeText(getApplicationContext(), "Please Enter Marks For sub4", Toast.LENGTH_SHORT).show();
-                    else if (TextUtils.isEmpty(txtMark1.getText().toString()))
-                        Toast.makeText(getApplicationContext(), "Please Enter Marks For sub5", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Please Enter Marks For IWT", Toast.LENGTH_SHORT).show();
+                    else if (TextUtils.isEmpty(txtMark2.getText().toString()))
+                        Toast.makeText(getApplicationContext(), "Please Enter Marks For SPM", Toast.LENGTH_SHORT).show();
+                    else if (TextUtils.isEmpty(txtMark3.getText().toString()))
+                        Toast.makeText(getApplicationContext(), "Please Enter Marks For ISDM", Toast.LENGTH_SHORT).show();
+                    else if (TextUtils.isEmpty(txtMark4.getText().toString()))
+                        Toast.makeText(getApplicationContext(), "Please Enter Marks For EAP", Toast.LENGTH_SHORT).show();
+                    else if (TextUtils.isEmpty(txtMark5.getText().toString()))
+                        Toast.makeText(getApplicationContext(), "Please Enter Marks For OOC", Toast.LENGTH_SHORT).show();
+                    else if (txtMark1.getText().toString().length() > 2 /*|txtMark1.getText().toString().matches("^[A-Z + -]*$")*/){
+                        Toast.makeText(getApplicationContext(), "Please Enter valid Marks For IWT", Toast.LENGTH_SHORT).show();
+                    }
+                    else if (txtMark2.getText().toString().length() > 2 /*| txtMark2.getText().toString().matches("^[A-Z+ ]*$")*/){
+                        Toast.makeText(getApplicationContext(), "Please Enter valid Marks For SPM", Toast.LENGTH_SHORT).show();
+                    }
+                    else if (txtMark3.getText().toString().length() > 2 /*| txtMark3.getText().toString().matches("^[A-Z+ ]*$")*/){
+                        Toast.makeText(getApplicationContext(), "Please Enter valid Marks For ISDM", Toast.LENGTH_SHORT).show();
+                    }
+                    else if (txtMark4.getText().toString().length() > 2 /*| txtMark4.getText().toString().matches("^[A-Z+ ]*$")*/){
+                        Toast.makeText(getApplicationContext(), "Please Enter valid Marks For EAP", Toast.LENGTH_SHORT).show();
+                    }
+                    else if (txtMark5.getText().toString().length() > 2 /*| txtMark5.getText().toString().matches("^[A-Z+ ]*$")*/){
+                        Toast.makeText(getApplicationContext(), "Please Enter valid Marks For OOC", Toast.LENGTH_SHORT).show();
+                    }
                     else {
                         marks.setMark1(txtMark1.getText().toString().trim());
                         marks.setMark2(txtMark2.getText().toString().trim());
@@ -79,11 +94,11 @@ public class AddResultActivity extends AppCompatActivity implements AdapterView.
         });
 
 
-       // Spinner spinner = findViewById(R.id.spinner3);
+        //Spinner YearSpinner = findViewById(R.id.YearSpinner);
         // ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.year, android.R.layout.simple_spinner_item);
         //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // spinner.setAdapter(adapter);
-      //  spinner.setOnItemSelectedListener(this);
+        //YearSpinner.setOnItemSelectedListener(this);
 
 
         addresultbtn = findViewById(R.id.addresultbtn);
@@ -114,6 +129,10 @@ public class AddResultActivity extends AppCompatActivity implements AdapterView.
         txtMark4.setText(null);
         txtMark5.setText(null);
     }
+
+//    public boolean validate_marks(){
+//        String markInput = txtMark1.
+//    }
 
 
 }

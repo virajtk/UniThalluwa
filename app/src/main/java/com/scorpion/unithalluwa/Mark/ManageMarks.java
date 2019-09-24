@@ -29,8 +29,11 @@ public class ManageMarks extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
 
+    String g1,g2,g3,g4,g5;
+
     private EditText txtMark1,txtMark2,txtMark3,txtMark4,txtMark5;
     private DatabaseReference dbref;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,7 @@ public class ManageMarks extends AppCompatActivity {
         txtMark3 = findViewById(R.id.mark3);
         txtMark4 = findViewById(R.id.mark4);
         txtMark5 = findViewById(R.id.mark5);
+
 
         marks = new Marks();
         firebaseAuth = FirebaseAuth.getInstance();
@@ -110,10 +114,10 @@ public class ManageMarks extends AppCompatActivity {
                             dbref =FirebaseDatabase.getInstance().getReference().child("Marks").child(firebaseUser.getUid());
                             dbref.removeValue();
                             clearControls();
-                            Toast.makeText(getApplicationContext(),"Marks deleted Successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),"Marks deleted successfully!", Toast.LENGTH_SHORT).show();
                         }
                         else {
-                            Toast.makeText(getApplicationContext(),"First enter your Marks",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),"First add your Marks!",Toast.LENGTH_SHORT).show();
                         }
                     }
 
@@ -125,13 +129,7 @@ public class ManageMarks extends AppCompatActivity {
             }
         });
 
-        reportbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),ReportActivity.class);
-                startActivity(i);
-            }
-        });
+
 
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
@@ -147,6 +145,12 @@ public class ManageMarks extends AppCompatActivity {
                     txtMark3.setText(dataSnapshot.child("mark3").getValue().toString());
                     txtMark4.setText(dataSnapshot.child("mark4").getValue().toString());
                     txtMark5.setText(dataSnapshot.child("mark5").getValue().toString());
+
+                    g1 = txtMark1.getText().toString();
+                    g2 = txtMark2.getText().toString();
+                    g3 = txtMark3.getText().toString();
+                    g4 = txtMark4.getText().toString();
+                    g5 = txtMark5.getText().toString();
                 }
                 else
                     Toast.makeText(getApplicationContext(),"First add Your marks",Toast.LENGTH_SHORT).show();
@@ -155,6 +159,20 @@ public class ManageMarks extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
+            }
+        });
+
+        reportbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(ManageMarks.this,ReportActivity.class);
+                i.putExtra("mark1",g1);
+                i.putExtra("mark2",g2);
+                i.putExtra("mark3",g3);
+                i.putExtra("mark4",g4);
+                i.putExtra("mark5",g5);
+                startActivity(i);
             }
         });
 

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    app:cardBackgroundColor="#000091EA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="@drawable/custom_card"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/listAssTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/listAssYear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Year"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/listAssSem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/semester"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/listAssModule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Module"
+            android:textAlignment="center" />
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

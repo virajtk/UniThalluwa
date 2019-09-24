@@ -1,8 +1,10 @@
 package com.scorpion.unithalluwa.User_UI;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -26,7 +28,7 @@ import com.scorpion.unithalluwa.data.model.User;
 public class profile extends AppCompatActivity {
 
     EditText profileUsername, profileEmail, profileRegNo, profileRole;
-    Button logoutBtn, updateBtn,deleteUserBtn,editBtn,cancelBtn;
+    Button updateBtn,deleteUserBtn,editBtn,cancelBtn,changePassBtn;
     ProgressBar progressBar;
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
@@ -48,11 +50,11 @@ public class profile extends AppCompatActivity {
 
         progressBar = findViewById(R.id.ProfileProgressBar);
 
-        logoutBtn = findViewById(R.id.removeBtn);
         editBtn = findViewById(R.id.editBtn);
         cancelBtn = findViewById(R.id.cancelBtn);
         updateBtn = findViewById(R.id.updateButton);
         deleteUserBtn = findViewById(R.id.removeBtn);
+        changePassBtn = findViewById(R.id.chpassword);
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
@@ -131,7 +133,72 @@ public class profile extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                final AlertDialog.Builder dialog = new AlertDialog.Builder(profile.this);
+                dialog.setTitle("Dude, Are you sure?");
+                dialog.setMessage("Delete this account will result in completely removing your account " +
+                        "from Uni Thalluwa and you won't be able to access the app or undone.");
+                dialog.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        progressBar.setVisibility(View.VISIBLE);
+                        firebaseUser.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                progressBar.setVisibility(View.GONE);
+                                if (task.isSuccessful()){
+                                    DatabaseReference deleteRef = FirebaseDatabase.getInstance().getReference().child("User");
+                                    deleteRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                            if (dataSnapshot.hasChild(firebaseUser.getUid())){
+                                                dbRef = FirebaseDatabase.getInstance().getReference().child("User").child(firebaseUser.getUid());
+                                                dbRef.removeValue();
+                                                Toast.makeText(getApplicationContext(),"Account Removed",Toast.LENGTH_LONG).show();
+
+                                                FirebaseAuth.getInstance().signOut();
+                                                Intent i = new Intent(getApplicationContext(), UserLogin.class);
+                                                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                startActivity(i);
+                                            }
+                                            else {
+                                                Toast.makeText(getApplicationContext(),"No source to delete",Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                        }
+                                    });
+                                } else{
+                                    Toast.makeText(getApplicationContext(),task.getException().getMessage(),Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        });
+                    }
+                });
+
+                dialog.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+
+                AlertDialog alertDialog = dialog.create();
+                alertDialog.show();
+
             }
         });
+
+        changePassBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),ChangePassword.class);
+                startActivity(i);
+            }
+        });
+
     }
 }

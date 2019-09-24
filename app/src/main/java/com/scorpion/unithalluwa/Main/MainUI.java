@@ -3,8 +3,11 @@ package com.scorpion.unithalluwa.Main;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import android.view.LayoutInflater;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -21,8 +24,12 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.scorpion.unithalluwa.About.Info;
+import com.scorpion.unithalluwa.About.gpa;
+import com.scorpion.unithalluwa.About.rules;
 import com.scorpion.unithalluwa.Assingment.AddAssignment;
 import com.scorpion.unithalluwa.Assingment.RetriveAssignment;
+import com.scorpion.unithalluwa.Assingment.userAssignment;
 import com.scorpion.unithalluwa.Mark.AddCAMarks;
 import com.scorpion.unithalluwa.Mark.ManageMarks;
 import com.scorpion.unithalluwa.PastPapers_UI.viewPastPapers;
@@ -34,9 +41,14 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
+import android.view.ViewGroup;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class MainUI extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -45,11 +57,65 @@ public class MainUI extends AppCompatActivity
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
     DatabaseReference readReference;
+    private RecyclerView recyclerView;
+    private ArrayList<DataSetFire> arrayList;
+    private FirebaseRecyclerOptions<DataSetFire> options;
+    private FirebaseRecyclerAdapter<DataSetFire,FirebaseViewHolder> adapter;
+    private DatabaseReference databaseReference;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        adapter.stopListening();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_ui);
+
+        recyclerView = findViewById(R.id.recyclerview);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        arrayList = new ArrayList<DataSetFire>();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Notices");
+        databaseReference.keepSynced(true);
+        options = new FirebaseRecyclerOptions.Builder<DataSetFire>().setQuery(databaseReference,DataSetFire.class).build();
+
+        adapter = new FirebaseRecyclerAdapter<DataSetFire, FirebaseViewHolder>(options) {
+            @Override
+            protected void onBindViewHolder(@NonNull FirebaseViewHolder holder, int position, @NonNull final DataSetFire model) {
+                holder.title.setText(model.getTitle());
+                holder.message.setText(model.getMessage());
+                holder.sender.setText(model.getSender());
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(MainUI.this,ManageNotices.class);
+                        intent.putExtra("title",model.getTitle());
+                        intent.putExtra("message",model.getMessage());
+                        intent.putExtra("sender",model.getMessage());
+                        startActivity(intent);
+                    }
+                });
+            }
+
+            @NonNull
+            @Override
+            public FirebaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                return new FirebaseViewHolder(LayoutInflater.from(MainUI.this).inflate(R.layout.row,parent,false));
+            }
+        };
+
+
+        recyclerView.setAdapter(adapter);
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -149,8 +215,8 @@ public class MainUI extends AppCompatActivity
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
         } else if (id == R.id.action_AppInfo) {
-            //Intent i = new Intent(getApplicationContext(), Info.class);
-            //startActivity(i);
+            Intent i = new Intent(getApplicationContext(), Info.class);
+            startActivity(i);
         }
 
         return super.onOptionsItemSelected(item);
@@ -172,14 +238,14 @@ public class MainUI extends AppCompatActivity
             Intent i = new Intent(getApplicationContext(), viewPastPapers.class);
             startActivity(i);
         } else if (id == R.id.nav_assignment) {
-            Intent i = new Intent(getApplicationContext(), RetriveAssignment.class);
+            Intent i = new Intent(getApplicationContext(), userAssignment.class);
             startActivity(i);
         } else if (id == R.id.nav_GPA) {
-            //Intent i = new Intent(getApplicationContext(),#.class);
-            //startActivity(i);
+            Intent i = new Intent(getApplicationContext(), gpa.class);
+            startActivity(i);
         } else if (id == R.id.nav_req) {
-            //Intent i = new Intent(getApplicationContext(),#.class);
-            //startActivity(i);
+            Intent i = new Intent(getApplicationContext(), rules.class);
+            startActivity(i);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
