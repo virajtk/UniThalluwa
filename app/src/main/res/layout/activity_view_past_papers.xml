@@ -45,8 +45,8 @@
 
     <ListView
         android:id="@+id/myList"
-        android:layout_width="313dp"
-        android:layout_height="463dp"
+        android:layout_width="289dp"
+        android:layout_height="368dp"
         android:layout_marginStart="7dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -54,10 +54,10 @@
         android:background="@drawable/custom_text_editor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.392"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.833" />
+        app:layout_constraintVertical_bias="0.613" />
 
     <Button
         android:id="@+id/addBtn"

@@ -67,6 +67,9 @@
     <string name="app_info">App Info</string>
     <string name="edit">Edit</string>
     <string name="cancel">Cancel</string>
+    <string name="select_module">Select module</string>
+    <string name="selectModules">Select Modules</string>
+    <string name="no_file_is_selected">No file is selected</string>
     <string-array name="roleItems">
         <item>Undergraduate</item>
         <item>Graduate</item>
@@ -104,5 +107,13 @@
         <item>MC</item>
         <item>CS</item>
         <item>ICS</item>
+    </string-array>
+
+    <string-array name="years">
+        <item>select years</item>
+        <item>Year 2019</item>
+        <item>Year 2018</item>
+        <item>Year 2017</item>
+
     </string-array>
 </resources>
